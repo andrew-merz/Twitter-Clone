@@ -19,9 +19,25 @@
 - As a user, I want to like, retweet, or comment on a tweet on either the homepage or the tweet page.
 - As a user, I want to click on my profile to see my profile info and even edit the info.
 
-## Wireframe 
+## Wireframes
 
+#### Home Page
 ![Screen Shot 2022-04-26 at 3 19 37 PM](https://user-images.githubusercontent.com/91819733/165385238-d3640e22-811e-48fe-9816-0cb88f5c5ffc.png)
+
+#### Sign Up Page
+![Screen Shot 2022-04-26 at 3 58 25 PM](https://user-images.githubusercontent.com/91819733/165391232-439ac881-fbe0-4059-81f9-170737249cfa.png)
+
+#### Sign Up Page / Enter Password
+![Screen Shot 2022-04-26 at 4 00 26 PM](https://user-images.githubusercontent.com/91819733/165391506-a8aef522-cc51-45fe-bb52-267774a85174.png)
+
+#### Sign Up Page / Enter Profile Picture
+![Screen Shot 2022-04-26 at 4 01 24 PM](https://user-images.githubusercontent.com/91819733/165391643-ff2f1ae0-2ebc-4457-8138-55ce25f788c0.png)
+
+#### Sign Up Page / Enter Bio
+![Screen Shot 2022-04-26 at 4 02 48 PM](https://user-images.githubusercontent.com/91819733/165391846-0061affa-b5c7-4b31-bfdb-009a6d505038.png)
+
+#### Bookmarks Page
+![Screen Shot 2022-04-26 at 4 03 52 PM](https://user-images.githubusercontent.com/91819733/165392022-0671aba8-27c0-4ce8-b16c-df017739a54c.png)
 
 ## ERD
 
