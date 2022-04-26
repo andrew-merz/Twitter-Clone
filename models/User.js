@@ -15,3 +15,7 @@ userSchema = mongoose.Schema({
     },
     tweets: [],
 })
+
+const User = mongoose.model('User', userSchema)
+
+module.exports = User;
