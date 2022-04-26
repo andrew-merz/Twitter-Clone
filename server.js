@@ -7,7 +7,10 @@ const controllers = require("./controllers");
 const app = express();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+
 //const navLinks = require('./navLinks');
+
+
 // db connection
 require("./config/db.connection");
 
@@ -27,16 +30,31 @@ app.use(express.urlencoded({ extended: false }));
 //app.use(navLinks);
 //add seesion app config here
 
-
-app.use('/home', controllers.home)
-app.use('/auth', controllers.signup)
-
-
+app.use("/home", controllers.home);
+app.use("/auth", controllers.auth);
 
 app.get("/", (request, response) => response.send("Welcome to Twitter!"));
 
 /* 
     EXPRESS Server: initializes the server; app.listen allows your computer to receive requests at http://localhost:4000/ 
 */
+
+/* SECTION App Config */
+app.use(
+  session({
+    // where to store the sessions in mongodb
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI,
+    }),
+    // secret key is used to sign every cookie to say its is valid
+    secret: "secretKey",
+    resave: false,
+    saveUninitialized: false,
+    // configure the experation of the cookie
+    cookie: {
+      maxAge: 1000 * 60 * 120, // two hours
+    },
+  })
+);
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
