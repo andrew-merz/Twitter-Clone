@@ -16,4 +16,3 @@ router.get("/login", function (req, res) {
 
 module.exports = router;
 
-router.get("/", (request, response) => response.send("Welcome to Twitter!"));
