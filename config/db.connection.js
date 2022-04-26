@@ -6,9 +6,9 @@ require("dotenv").config();
 
 // This is actually connecting to Atlas with the
 // help of our .env file
-//const connectionStr = process.env.MONGODB_URI;
+const connectionStr = process.env.MONGODB_URI;
 
-//mongoose.connect(connectionStr);
+mongoose.connect(connectionStr);
 
 // mongoDB connection on success
 mongoose.connection.on("connected", () => {
