@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head partial -->
+  <%- include('../partials/head.ejs', { page: 'register' } ) %>
+
+  <body class="has-navbar-fixed-top">
+    <!-- Navbar Partial -->
+
+    <section class="hero is-fullheight-with-navbar is-link">
+      <div class="hero-body is-flex-direction-column">
+        <h1 class="title">Register</h1>
+        <form action="/auth/register" method="POST" class="box">
+          <div class="field">
+            <label class="label">Username</label>
+            <div class="control">
+              <input
+                name="username"
+                class="input"
+                type="text"
+                placeholder="username goes here"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input
+                name="email"
+                class="input"
+                type="email"
+                placeholder="example@domain.com"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input
+                name="password"
+                class="input"
+                type="password"
+                placeholder="******"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-link is-fullwidth">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <main class="container is-max-widescreen"></main>
+  </body>
+</html>
