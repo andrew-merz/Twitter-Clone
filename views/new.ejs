@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <h1>New Tweet</h1>
+        <form method="POST" action="/home/">
+
+            <div>
+                <label for="content"> content: </label>
+                <input id="content" name="content" type="text" />
+            </div>
+
+            <input type="submit" value="tweet">
+        </form>
+    </body>
+
+</html>
