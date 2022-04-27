@@ -1,0 +1,14 @@
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  width: 200px;
+  
+}
+
+.homeMainContent {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
