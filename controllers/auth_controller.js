@@ -15,7 +15,8 @@ router.get("/login", function (req, res) {
 router.get("/logout", async function (req, res) {
   try {
     await req.session.destroy();
-    return res.redirect("/login");
+    console.log("works");
+    return res.redirect("/auth/login");
   } catch (error) {
     console.log(error);
     return res.send(error);
@@ -76,7 +77,7 @@ router.post("/login", async function (req, res) {
       username: foundUser.username,
     };
     console.log(req.session.currentUser);
-    return res.redirect("/");
+    return res.redirect("/home");
   } catch (err) {
     console.log(err);
     res.send(err);
