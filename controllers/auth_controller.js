@@ -12,6 +12,16 @@ router.get("/login", function (req, res) {
   return res.render("auth/login");
 });
 
+router.get("/logout", async function (req, res) {
+  try {
+    await req.session.destroy();
+    return res.redirect("/auth/login");
+  } catch (error) {
+    console.log(error);
+    return res.send(error);
+  }
+});
+
 router.post("/register", async function (req, res) {
   try {
     // step check if user exists

@@ -57,5 +57,13 @@ app.use(
     },
   })
 );
-app.use((req, res) => console.log(JSON.stringify(req.session)));
+
+let sessionLog = (req, res, next) => {
+  //console.log(req.session);
+  res.send(console.log(req.session));
+  next();
+};
+app.use(sessionLog);
+//app.use((req, res) => console.log(JSON.stringify(req.session)));
+//app.use((req, res) => console.log(req.session));
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
