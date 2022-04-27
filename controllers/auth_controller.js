@@ -18,7 +18,7 @@ router.post("/register", async function (req, res) {
     const foundUser = await User.exists({ email: req.body.email });
     // if so redirect to login
     if (foundUser) {
-      return res.redirect("/login");
+      return res.redirect("/auth/login");
     }
     // if not create user and redirect to login
 
@@ -33,7 +33,7 @@ router.post("/register", async function (req, res) {
     // create user in database
     const newUser = await User.create(req.body);
 
-    return res.redirect("/login");
+    return res.redirect("/auth/login");
   } catch (err) {
     console.log(err);
     return res.send(err);
