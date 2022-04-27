@@ -12,15 +12,13 @@
             <h2 class="title">All Tweets</h2>
         </div>
     </section>
-    
-    
 
     <main class="container">
         <div>
             <div>
                 <% for(let idx=0; idx < tweets.length; idx++){ %>
                     <% const tweet=tweets[idx] %>
-
+                    <%= tweet.content %>
                 <% } %>
             </div>
         </div>
