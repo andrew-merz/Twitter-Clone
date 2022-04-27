@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head.ejs', { pageName: 'Tweet Page'}) %> 
+<%- include('partials/head.ejs', { pageName: 'Tweet Page' }) %>
 
-<body>
-    <%- include('partials/nav.ejs') %> 
-    <h3>Tweet</h3>
-    <div>
-            <%= oneTweet.content %>
-            <%= oneTweet.likes %>
-            <%= oneTweet.retweets %>
-        <% } %>
-    </div>
+    <body>
+        <%- include('partials/nav.ejs') %>
+            <h3>Tweet</h3>
+            <div>
+                <%= oneTweet.content %>
+                    <%= oneTweet.likes %>
+                        <%= oneTweet.retweets %>
+            </div>
 
-</body>
+    </body>
 
 </html>
