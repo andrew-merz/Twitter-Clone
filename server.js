@@ -9,11 +9,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 //const navLinks = require("./navLinks");
-=======
 
 //const navLinks = require('./navLinks');
-
-
 
 // db connection
 require("./config/db.connection");
