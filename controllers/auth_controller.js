@@ -9,7 +9,7 @@ router.get("/register", function (req, res) {
 });
 
 router.get("/login", function (req, res) {
-  res.send("login page");
+  res.render("auth/login");
 });
 
 //add router.post and router.get later

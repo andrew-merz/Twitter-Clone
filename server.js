@@ -7,7 +7,7 @@ const controllers = require("./controllers");
 const app = express();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const navLinks = require("./navLinks");
+//const navLinks = require("./navLinks");
 // db connection
 require("./config/db.connection");
 
@@ -24,7 +24,7 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
-app.use(navLinks);
+//app.use(navLinks);
 //add seesion app config here
 
 app.use("/home", controllers.home);
