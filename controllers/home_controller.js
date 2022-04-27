@@ -17,6 +17,10 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
+
 router.get('/:id', async (req, res, next) => {
     try {
         const tweet = await db.Tweet.findById(req.params.id)
@@ -28,5 +32,48 @@ router.get('/:id', async (req, res, next) => {
         return next();
     }
 })
+
+router.get('/:id/edit', async (req,res, next)=>{
+    try {
+        const updatedTweet = await db.Tweet.findById(req.params.id);
+        console.log(updatedTweet);
+        const context = {
+            tweet: updatedTweet
+        }
+        return res.render('edit.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
+
+router.post('/', async (req, res, next) => {
+    try {
+        // console.log(`The req.body is ${req.body}`)
+        const createdTweet = await db.Tweet.create(req.body);
+        console.log(`The created tweet is ${createdTweet}`)
+        res.redirect('/home');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+router.delete('/:id', async (req,res, next)=>{
+    try {
+        const deletedTweet = await db.Tweet.findByIdAndDelete(req.params.id);
+        console.log(deletedTweet);
+        return res.redirect('/home')
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 module.exports = router;
