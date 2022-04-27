@@ -9,9 +9,20 @@
 
     <section>
         <div>
-            <h2 class="title">All Tweets</h2>
+            <h2 class="title">Home</h2>
         </div>
     </section>
+    <form method="POST" action="/home">
+        <div>
+            <label for="content">Tweet</label>
+            <input id="content" type="text" name="content" placeholder="What's happening?">
+        </div>
+        <div>
+            <label for="image">Image</label>
+            <input id="image" type="text" name="image" placeholder="tweets.png">
+        </div>
+        <input type="submit" value="Tweet">
+    </form>
 
     <main class="container">
         <div>
@@ -19,6 +30,10 @@
                 <% for(let idx=0; idx < tweets.length; idx++){ %>
                     <% const tweet=tweets[idx] %>
                     <%= tweet.content %>
+                    <div>
+                        <img class="card-image" src="<%=tweet.image%>" alt="Placeholder image" />
+                    </div>
+
                 <% } %>
             </div>
         </div>
