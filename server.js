@@ -55,6 +55,7 @@ app.use(
   })
 );
 
+
 let sessionLog = (req, res, next) => {
   //console.log(req.session);
   //es.send(console.log(req.session));
@@ -68,4 +69,7 @@ app.use(sessionLog);
 
 app.use("/home", controllers.home);
 app.use("/auth", controllers.auth);
+
+// app.use((req, res) => console.log(JSON.stringify(req.session)));
+
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

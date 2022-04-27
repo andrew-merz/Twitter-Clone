@@ -1,0 +1,26 @@
+.sideNavbar {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  width: 8%;
+  top: 10%
+  
+}
+
+.homeMainContent {
+  margin-left: 10%;
+  padding: 1px 16px;
+}
+
+.card-image {
+  width: 400px;
+  height: 400px;
+}
+
+#content {
+  margin-top: 20px;
+  width: 50%;
+  height: 100px;
+}
