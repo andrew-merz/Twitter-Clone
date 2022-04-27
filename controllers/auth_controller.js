@@ -41,14 +41,14 @@ router.post("/register", async function (req, res) {
 });
 
 //Login POST route
-router.post("/auth/login", async function (req, res) {
+router.post("/login", async function (req, res) {
   try {
     // check if the user exists
     const foundUser = await User.findOne({ email: req.body.email });
     console.log(foundUser);
     // if not
     // redirect to register
-    if (!foundUser) return res.redirect("/register");
+    if (!foundUser) return res.redirect("/auth/register");
 
     // if the user exists
     // validate the user if passwords match -> login
@@ -65,7 +65,7 @@ router.post("/auth/login", async function (req, res) {
       username: foundUser.username,
     };
 
-    return res.redirect("/products");
+    return res.redirect("/");
   } catch (err) {
     console.log(err);
     res.send(err);
