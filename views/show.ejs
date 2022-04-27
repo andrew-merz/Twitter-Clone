@@ -7,11 +7,9 @@
     <%- include('partials/nav.ejs') %> 
     <h3>Tweet</h3>
     <div>
-        <% for(let idx=0; idx < tweets.length; idx++){ %>
-            <% const tweet=tweets[idx] %>
-            <%= tweet.content %>
-            <%= tweet.likes %>
-            <%= tweet.retweets %>
+            <%= oneTweet.content %>
+            <%= oneTweet.likes %>
+            <%= oneTweet.retweets %>
         <% } %>
     </div>
 

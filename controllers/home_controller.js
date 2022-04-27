@@ -15,7 +15,18 @@ router.get('/', async (req, res, next) => {
         req.error = error;
         return next();
     }
-
 });
 
-module.exports = router
+router.get('/:id', async (req, res, next) => {
+    try {
+        const tweet = await db.Tweet.findById(req.params.id)
+        const context = { oneTweet: tweet };
+        return res.render('show.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+module.exports = router;
