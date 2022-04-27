@@ -31,9 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 //app.use(navLinks);
 //add seesion app config here
 
-app.use("/home", controllers.home);
-app.use("/auth", controllers.auth);
-
 app.get("/", (request, response) => response.send("Welcome to Twitter!"));
 
 /* 
@@ -60,10 +57,15 @@ app.use(
 
 let sessionLog = (req, res, next) => {
   //console.log(req.session);
-  res.send(console.log(req.session));
+  //es.send(console.log(req.session));
+  //req.session.currentUser = undefined;
+  console.log(req.session);
   next();
 };
 app.use(sessionLog);
 //app.use((req, res) => console.log(JSON.stringify(req.session)));
 //app.use((req, res) => console.log(req.session));
+
+app.use("/home", controllers.home);
+app.use("/auth", controllers.auth);
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

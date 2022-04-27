@@ -1,4 +1,6 @@
+require("../config/db.connection");
+
 module.exports = {
-    Tweet: require('./Tweet'),
-    User: require('./User')
-}
+  Tweet: require("./Tweet"),
+  User: require("./User"),
+};

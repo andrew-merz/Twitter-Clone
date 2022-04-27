@@ -9,13 +9,13 @@ router.get("/register", function (req, res) {
 });
 
 router.get("/login", function (req, res) {
-  return res.render("auth/login");
+  res.render("auth/login");
 });
 
 router.get("/logout", async function (req, res) {
   try {
     await req.session.destroy();
-    return res.redirect("/auth/login");
+    return res.redirect("/login");
   } catch (error) {
     console.log(error);
     return res.send(error);
@@ -70,12 +70,12 @@ router.post("/login", async function (req, res) {
 
     // if match create the session and redirect to home\
     // here we have created the key card
-    //console.log(req.session);
-    // req.session.User = {
-    //   id: foundUser._id,
-    //   username: foundUser.username,
-    // };
-
+    //console.log(`here is my ${req.session}`);
+    req.session.currentUser = {
+      id: foundUser._id,
+      username: foundUser.username,
+    };
+    console.log(req.session.currentUser);
     return res.redirect("/");
   } catch (err) {
     console.log(err);
