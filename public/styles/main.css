@@ -24,3 +24,13 @@
   width: 50%;
   height: 100px;
 }
+
+.tweetButton {
+  background-color: #00acee;
+  border-radius: 40%;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  border: none;
+  margin:10px 0px 10px 350px;
+}

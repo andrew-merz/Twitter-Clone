@@ -18,6 +18,7 @@ tweetSchema = mongoose.Schema({
     retweets: {
         type: Number,
     },
+    
 },
     {
         timestamps: true,

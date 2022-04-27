@@ -17,9 +17,21 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-// router.get('/new', (req, res) => {
-//     res.render('new.ejs')
-// })
+//switch this route to ./:id/bookmarks later
+//make bookmark.ejs that shows bookmared tweet only
+//no tweet button in bookmark.ejs
+router.get('/bookmarks', async (req,res,next) => {
+    try {
+        const tweets = await db.Tweet.find({});
+        const context = { tweets }
+        console.log(tweets);
+        return res.render('bookmarks.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 
 router.get('/:id', async (req, res, next) => {
     try {
