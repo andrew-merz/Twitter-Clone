@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="/tweet/tweet.css" />
-  <%- include('partials/head.ejs', { pageName: 'Tweet Page' }) %> <%-
-  include('./partials/nav.ejs', {page: 'nav'}) %>
-  <body class="show-page">
-    <%- include('partials/sideNavBar.ejs')%>
-    <section class="show-content">
-      <!-- <h3>Tweet</h3>
+<%- include('partials/head.ejs', { pageName: 'Tweet Page' }) %>
+  <%- include('./partials/nav.ejs', {page: 'nav' }) %>
+
+    <body class="show-page">
+      <section class="show-content">
+        <div>
+          <%- include('partials/sideNavBar.ejs')%>
+        </div>
+        <!-- <h3>Tweet</h3>
                 <%= /* user.avatar */%>
                     <p>
                         <%= /* user.name */%>
@@ -14,25 +16,30 @@
                     <p>
                         <%= /* user.username */%>
                     </p> -->
-      <div class="tweet-container">
-        <div class="">
-          <p class="content"><%= oneTweet.content %></p>
+        <div class="tweet-container">
+          <div class="">
+            <p class="content">
+              <%= oneTweet.content %>
+            </p>
+          </div>
+          <div class="image-container">
+            <img class="tweet-image" src="<%= oneTweet.image %>" alt="Image" />
+          </div>
+          <div class="like-retweet-buttons">
+            <a class="comment-button" href=""><i class="fa-solid fa-comment"></i></a>
+            <input class="like" type="button" value="♡" />
+            <a class="retweet" href=""><i class="fa-solid fa-retweet"></i></a>
+          </div>
+          <div class="">
+            <p>
+              <%= oneTweet.likes %>
+            </p>
+            <p>
+              <%= oneTweet.retweets %>
+            </p>
+          </div>
         </div>
-        <div class="image-container">
-          <img class="tweet-image" src="<%= oneTweet.image %>" alt="Image" />
-        </div>
-        <div class="like-retweet-buttons">
-          <input class="like" type="button" value="♡" />
-          <img
-            src="https://www.shareicon.net/data/2016/04/20/752568_arrows_512x512.png"
-            alt=""
-          />
-        </div>
-        <div class="">
-          <p><%= oneTweet.likes %></p>
-          <p><%= oneTweet.retweets %></p>
-        </div>
-      </div>
-    </section>
-  </body>
+      </section>
+    </body>
+
 </html>
