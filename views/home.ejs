@@ -14,7 +14,8 @@
     </section>
     <form method="POST" action="/home">
         <div>
-            <label for="content">Tweet</label>
+            <!-- change it to picture later -->
+            <label for="content"><%= currentUser.username %></label>
             <input id="content" type="text" name="content" placeholder="What's happening?">
         </div>
         <div>
@@ -29,6 +30,7 @@
             <div>
                 <% for(let idx=0; idx < tweets.length; idx++){ %>
                     <% const tweet=tweets[idx] %>
+                    
                     <%= tweet.content %>
                     <div>
                         <img class="card-image" src="<%=tweet.image%>" alt="Placeholder image" />
