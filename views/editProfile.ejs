@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %> <%-
+  include('./partials/nav.ejs', {page: 'nav'}) %>
+  <body>
+    <%- include('partials/sideNavBar.ejs')%>
+    <div class="homeMainContent">
+    <h1>Edit Profile</h1>
+    <div>
+        <label>User name</label>
+        <input type="text" name="name" value="<%= currentUser.username%>"/>
+    </div>
+
+
+    <div>
+        <label>Profile picture</label>
+        <input type="text" name="image" value="<%= currentUser.profilePic%>"/>
+    </div>
+    <div>
+        <input type="submit" value="Edit Profile: <%= currentUser.username%>"/>
+    </div>
+</div>
+</body>
+</html>
