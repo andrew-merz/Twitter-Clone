@@ -1,0 +1,68 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.show-content {
+    display: grid;
+    justify-content: center;
+    height: 100vh;
+}
+
+.tweet-container {
+    width: 600px;
+    padding: 0 15px 0 15px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tweet-image {
+    width: 450px;
+    height: 400px;
+    border-radius: 6%;
+}
+
+.like-retweet-buttons {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 56px 8px 58px;
+}
+
+.like {
+    font-size: 22px;
+    background-color: white;
+    border: none;
+}
+
+.like:hover {
+    background-color: rgba(255, 78, 181, 0.164);
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(248, 61, 192);
+}
+
+.like-retweet-buttons img {
+    height: 35px;
+    width: 35px;
+    padding: 6px;
+}
+
+.like-retweet-buttons img:hover {
+    background-color: rgba(1, 145, 1, 0.144);
+    border-radius: 50%;
+    color: rgb(28, 190, 28);
+    cursor: pointer;
+}
