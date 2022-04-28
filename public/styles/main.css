@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 .home-body {
   background-color: black;
   color: white;
@@ -6,40 +10,69 @@
 
 #title {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+  margin-left: 15px;
 }
 
 .sideNavbar {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: auto;
   position: fixed;
-  width: 8%;
-  top: 10%
-  
+  font-size: 36px;
+  width: 100px;
+  text-align: center;
+  vertical-align: center;
+  color: white;
+}
+
+.sideNavbar li {
+  height: 100px;
+}
+
+.sideNavbar a {
+  color: white;
+  padding: 15px;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.sideNavbar a:hover {
+  color: white;
+  background-color: rgb(37, 37, 37);
+}
+
+.tweeterLogo {
+  margin-top: 15px;
+}
+
+.tweetIcon img {
+  height: 60px;
+  width: 60px;
+  border-radius: 29px;
+}
+
+.tweetIcon a:hover {
+  background: none;
 }
 
 .homeMainContent {
+  background-color: black;
   display: grid;
+  grid-template-columns: 100px 600px;
   justify-content: center;
-  margin-left: 10%;
-  padding: 1px 16px;
-  height: 100vh;
+  height: 100%;
 }
 
 .twitter-home-container {
   width: 600px;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  padding: 0 20px 0 20px;
+  border-left: 1px solid rgb(70, 70, 70);
+  border-right: 1px solid rgb(70, 70, 70);
 }
 
 .card-image {
   width: 450px;
   height: 400px;
+  border-radius: 6%;
 }
 
 #content {
@@ -47,9 +80,21 @@
   color: white;
   background-color: black;
   border: none;
+  width: 450px;
   font-size: 26px;
-  margin-top: 20px;
   padding: 20px 2px 20px 0;
+  display: inline-block;
+  resize: none;
+  height: 80px;
+  overflow: hidden;
+}
+
+.tweet-text-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(70, 70, 70);
+  margin-bottom: 15px;
+  padding: 10px 0 10px 0;
 }
 
 #content:focus {
@@ -66,9 +111,63 @@
   text-align: center;
   padding: 6px 20px 6px 20px;
   border: none;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.tweetButton:hover {
+  cursor: pointer;
+  background-color: #00abeebe;
 }
 
 .profile-image {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
+  margin: 0 20px 0 20px;
+  border-radius: 50%;
+}
+
+.image-input {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-right: auto;
+  float: left;
+  width: 50vw;
+  margin-left: 51px;
+}
+
+.image-input::placeholder {
+  color: white;
+  opacity: .6;
+}
+
+.image-input:focus {
+  outline: none;
+}
+
+.image-tweet-button {
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid rgb(70, 70, 70);
+  padding-bottom: 15px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tweet-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    line-height: 28px;
+    margin: 10px 71px 0 72px;
+}
+
+.auto_height { /* CSS */
+  width: 100%;
 }
