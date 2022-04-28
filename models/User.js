@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   },
   profilePic: {
     type: String,
-    default: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png'
+    default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'
   }
 });
 
