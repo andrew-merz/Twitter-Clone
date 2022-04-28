@@ -17,27 +17,56 @@ body {
 }
 
 .sideNavbar {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: auto;
   position: fixed;
-  width: 8%;
-  top: 10%
-  
+  font-size: 36px;
+  width: 100px;
+  text-align: center;
+  vertical-align: center;
+  color: white;
+}
+
+.sideNavbar li {
+  height: 100px;
+}
+
+.sideNavbar a {
+  color: white;
+  padding: 15px;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.sideNavbar a:hover {
+  color: white;
+  background-color: rgb(37, 37, 37);
+}
+
+.tweeterLogo {
+  margin-top: 15px;
+}
+
+.tweetIcon img {
+  height: 60px;
+  width: 60px;
+  border-radius: 29px;
+}
+
+.tweetIcon a:hover {
+  background: none;
 }
 
 .homeMainContent {
   background-color: black;
   display: grid;
+  grid-template-columns: 100px 600px;
   justify-content: center;
   height: 100%;
 }
 
 .twitter-home-container {
   width: 600px;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-left: 1px solid rgb(70, 70, 70);
+  border-right: 1px solid rgb(70, 70, 70);
 }
 
 .card-image {
@@ -63,7 +92,7 @@ body {
 .tweet-text-container {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(70, 70, 70);
   margin-bottom: 15px;
   padding: 10px 0 10px 0;
 }
@@ -121,7 +150,7 @@ body {
 .image-tweet-button {
   display: flex;
   justify-content: end;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(70, 70, 70);
   padding-bottom: 15px;
 }
 
