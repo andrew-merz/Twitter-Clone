@@ -39,6 +39,19 @@ router.get('/bookmarks', async (req,res,next) => {
     }
 })
 
+router.get('/editprofile', async (req, res, next) => {
+    try {
+        const currentUser = req.session.currentUser;
+        const context = {currentUser}
+        return res.render('editProfile.ejs', context)
+
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 router.get('/:id', async (req, res, next) => {
     try {
         const tweet = await db.Tweet.findById(req.params.id)
