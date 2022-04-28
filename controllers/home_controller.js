@@ -7,8 +7,11 @@ const db = require('../models')
 router.get('/', async (req, res, next) => {
     try {
         const tweets = await db.Tweet.find({});
-        const context = { tweets }
-        console.log(tweets);
+        const currentUser = req.session.currentUser;
+        
+        console.log(currentUser.username);
+        //from here trying
+        const context = { tweets, currentUser }
         return res.render('home.ejs', context);
     } catch (error) {
         console.log(error);
@@ -22,9 +25,12 @@ router.get('/', async (req, res, next) => {
 //no tweet button in bookmark.ejs
 router.get('/bookmarks', async (req,res,next) => {
     try {
+        //later change tweets to only bookmarked ones
         const tweets = await db.Tweet.find({});
-        const context = { tweets }
+        
+        const currentUser = req.session.currentUser;
         console.log(tweets);
+        const context = { tweets, currentUser }
         return res.render('bookmarks.ejs', context);
     } catch (error) {
         console.log(error);
