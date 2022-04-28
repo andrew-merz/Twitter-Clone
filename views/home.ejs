@@ -15,7 +15,13 @@
     <form method="POST" action="/home">
         <div>
             <!-- change it to picture later -->
-            <label for="content"><%= currentUser.username %></label>
+            <label for="content">
+                
+                    <img class="profile-image" src="<%= currentUser.profilePic %>" alt="Placeholder image" />
+                
+
+
+            </label>
             <input id="content" type="text" name="content" placeholder="What's happening?">
         </div>
         <div>
