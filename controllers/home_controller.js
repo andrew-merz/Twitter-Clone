@@ -4,6 +4,8 @@ const router = express.Router()
 
 const db = require('../models')
 
+
+
 router.get('/', async (req, res, next) => {
     try {
         const tweets = await db.Tweet.find({});
@@ -39,10 +41,42 @@ router.get('/bookmarks', async (req,res,next) => {
     }
 })
 
-router.get('/editprofile', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
+        const tweets = await db.Tweet.find({});
         const currentUser = req.session.currentUser;
-        const context = {currentUser}
+        
+        console.log(currentUser);
+        //from here trying
+        const context = { tweets, currentUser }
+        return res.render('home.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+//const foundUser = await User.findOne({ email: req.body.email });
+
+// router.get('/editprofile', async (req, res, next) => {
+//     try {
+//         const currentUser = await req.session.currentUser
+//         const context = {currentUser}
+//         return res.render('editProfile.ejs', context)
+
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
+
+router.get('/:id/editprofile', async (req, res, next) => {
+    try {
+        const updatedUser = await db.User.findById(req.params.id);
+        console.log(updatedUser)
+        const context = {currentUser : updatedUser}
         return res.render('editProfile.ejs', context)
 
     } catch (error) {
@@ -99,6 +133,21 @@ router.delete('/:id', async (req,res, next)=>{
         const deletedTweet = await db.Tweet.findByIdAndDelete(req.params.id);
         console.log(deletedTweet);
         return res.redirect('/home')
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+
+router.put('/:id', async (req, res, next)=>{
+    try {
+        const updatedUser = await db.User.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedUser)
+        //const updatedUsername = await db.Product.findByIdAndUpdate(req.params.id, req.body);
+        
+        return res.redirect(`/home`)
     } catch (error) {
         console.log(error);
         req.error = error;
