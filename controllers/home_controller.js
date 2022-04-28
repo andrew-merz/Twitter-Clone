@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
         const tweets = await db.Tweet.find({});
         const currentUser = req.session.currentUser;
         
-        console.log(currentUser.username);
+        console.log(currentUser);
         //from here trying
         const context = { tweets, currentUser }
         return res.render('home.ejs', context);

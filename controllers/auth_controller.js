@@ -74,6 +74,7 @@ router.post("/login", async function (req, res) {
     req.session.currentUser = {
       id: foundUser._id,
       username: foundUser.username,
+      profilePic: foundUser.profilePic
     };
     console.log(req.session.currentUser);
     return res.redirect("/home");
