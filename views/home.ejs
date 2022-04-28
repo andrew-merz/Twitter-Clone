@@ -2,12 +2,13 @@
 <html lang="en">
   <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %> <%-
   include('./partials/nav.ejs', {page: 'nav'}) %>
-  <body>
+  <body class="home-body">
     <%- include('partials/sideNavBar.ejs')%>
     <div class="homeMainContent">
+      <main class="twitter-home-container">
       <section>
         <div>
-          <h2 class="title">Home</h2>
+          <h2 id="title">Home</h2>
         </div>
       </section>
       <form method="POST" action="/home">
@@ -28,10 +29,9 @@
 
         </div>
         <div>
-          <label for="image">Image</label>
           <input id="image" type="text" name="image" placeholder="tweets.png" />
+          <input type="submit" value="Tweet" class="tweetButton" />
         </div>
-        <input type="submit" value="Tweet" class="tweetButton" />
       </form>
 
       <main class="container">
@@ -51,6 +51,7 @@
           </div>
         </div>
       </main>
+    </main>
     </div>
   </body>
 </html>
