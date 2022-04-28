@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <%- include('partials/head.ejs',{ pageName :  "Twitter home" }) %>
-
-<body>
-
+  <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %> <%-
+  include('./partials/nav.ejs', {page: 'nav'}) %>
+  <body>
     <%- include('partials/sideNavBar.ejs')%>
     <div class="homeMainContent">
-    <section>
+      <section>
         <div>
-            <h2 class="title">Home</h2>
+          <h2 class="title">Home</h2>
         </div>
-    </section>
-    <form method="POST" action="/home">
+      </section>
+      <form method="POST" action="/home">
         <div>
-            <!-- change it to picture later -->
-            <label for="content"><%= currentUser.username %></label>
-            <input id="content" type="text" name="content" placeholder="What's happening?">
+          <!-- change it to picture later -->
+          <label for="content"><%= currentUser.username %></label>
+          <input
+            id="content"
+            type="text"
+            name="content"
+            placeholder="What's happening?"
+          />
         </div>
         <div>
-            <label for="image">Image</label>
-            <input id="image" type="text" name="image" placeholder="tweets.png">
+          <label for="image">Image</label>
+          <input id="image" type="text" name="image" placeholder="tweets.png" />
         </div>
-        <input type="submit" value="Tweet" class="tweetButton">
-    </form>
+        <input type="submit" value="Tweet" class="tweetButton" />
+      </form>
 
-    <main class="container">
+      <main class="container">
         <div>
+          <div>
+            <% for(let idx=0; idx < tweets.length; idx++){ %> <% const
+            tweet=tweets[idx] %> <%= tweet.content %>
             <div>
-                <% for(let idx=0; idx < tweets.length; idx++){ %>
-                    <% const tweet=tweets[idx] %>
-                    
-                    <%= tweet.content %>
-                    <div>
-                        <img class="card-image" src="<%=tweet.image%>" alt="Placeholder image" />
-                    </div>
-
-                <% } %>
+              <img
+                class="card-image"
+                src="<%=tweet.image%>"
+                alt="Placeholder image"
+              />
             </div>
-        </div>
-    </main>
-</div>
-</body>
 
+            <% } %>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
