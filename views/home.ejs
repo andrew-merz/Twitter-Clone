@@ -28,6 +28,64 @@
               <input type="submit" value="Tweet" class="tweetButton" />
             </div>
           </form>
+  <body class="home-body">
+    <div class="homeMainContent">
+      <div><%- include('partials/sideNavBar.ejs')%></div>
+      <main class="twitter-home-container">
+        <section>
+          <div>
+            <h2 id="title">Home</h2>
+          </div>
+        </section>
+        <form method="POST" action="/home">
+          <div class="tweet-text-container">
+            <label for="content">
+              <img
+                class="profile-image"
+                src="<%= currentUser.profilePic %>"
+                alt="Placeholder image"
+              />
+            </label>
+            <textarea
+              name="content"
+              id="content"
+              placeholder="What's happening?"
+              onkeyup="autoAdjustTextArea(this);"
+            ></textarea>
+            <input
+              name="user"
+              id="user"
+              type="hidden"
+              value="<%=currentUser.id%>"
+            />
+            <input
+              name="user"
+              id="user"
+              type="hidden"
+              value="<%=currentUser.profilePic%>"
+            />
+
+            <!--
+              <input
+              autocomplete="off"
+              id="content"
+              type="text"
+              name="content"
+              placeholder="What's happening?"
+            />
+            -->
+          </div>
+          <div class="image-tweet-button">
+            <input
+              autocomplete="off"
+              class="image-input"
+              type="text"
+              name="image"
+              placeholder="image.png"
+            />
+            <input type="submit" value="Tweet" class="tweetButton" />
+          </div>
+        </form>
 
           <main class="container">
             <div>
@@ -56,6 +114,14 @@
                       <a class="retweet" href=""><i class="fa-solid fa-retweet"></i></a>
                     </div>
                     <% } %>
+
+              <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
+              tweet=tweets[idx] %>
+              <div class="tweetPic-user">
+                <p class="username">
+                  <img class="profile-image" src="<%=tweet.user.profilePic%>" />
+                  @<%=tweet.user.username%>
+                </p>
               </div>
             </div>
           </main>
