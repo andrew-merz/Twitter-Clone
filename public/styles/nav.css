@@ -1,3 +1,13 @@
 .navbar {
-  background-image: rgb(112, 110, 110);
+  background-color: rgb(112, 110, 110);
+}
+.nav-names {
+  text-align: end;
+  color: whitesmoke;
+}
+.navbar div {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-evenly;
+  align-items: center;
 }
