@@ -6,7 +6,7 @@
     <body class="show-page">
       <section class="show-content">
         <div>
-          <%- /* include('partials/sideNavBar.ejs')*/%>
+          <%- include('partials/sideNavBar.ejs')%>
         </div>
         <!-- <h3>Tweet</h3>
                 <%= /* user.avatar */%>
@@ -43,17 +43,23 @@
                 </span>
               </div>
           </div>
-          <div class="tweet-text-container">
-            <label for="content">
-              <img class="profile-image" src="<%= currentUser.profilePic %>" alt="Placeholder image" />
-            </label>
-            <textarea name="content" id="content" placeholder="Tweet your reply"
-              onkeyup="autoAdjustTextArea(this);"></textarea>
+          <form method="POST" action="/home/<%= oneTweet._id %>">
+            <p class="replying-to">Replying to @<%= %>
+            </p>
+            <div class="show-tweet-text-container">
+              <input class="replying-to" value="Replying to @<%= %>">
+              <label for="content">
+                <img class="profile-image" src="<%= currentUser.profilePic %>" alt="Placeholder image" />
+              </label>
+              <textarea name="content" id="content" placeholder="Tweet your reply"
+                onkeyup="autoAdjustTextArea(this);"></textarea>
+            </div>
             <div class="image-tweet-button">
               <input autocomplete="off" class="image-input" type="text" name="image" placeholder="image.png" />
               <input type="submit" value="Reply" class="tweetButton" />
             </div>
-          </div>
+          </form>
+        </div>
         </div>
       </section>
       <script>
