@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs', { pageName: 'Tweet Page' }) %>
+  <%- include('./partials/nav.ejs', {page: 'nav' }) %>
+
+    <body class="show-page">
+      <section class="show-content">
+        <div>
+          <%- include('partials/sideNavBar.ejs')%>
+        </div>
+        <!-- <h3>Tweet</h3>
+                <%= /* user.avatar */%>
+                    <p>
+                        <%= /* user.name */%>
+                    </p>
+                    <p>
+                        <%= /* user.username */%>
+                    </p> -->
+        <div class="tweet-container">
+          <div class="">
+            <p class="content">
+              <%= oneTweet.content %>
+            </p>
+          </div>
+          <div class="img-container">
+            <% if (oneTweet.image !== '') { %>
+            <img class="tweet-image" src="<%= oneTweet.image %>" alt="" />
+            <% } %> 
+          </div>
+          <div class="like-retweet-buttons">
+            <div>
+              <button class="comment-button"><i class="fa-solid fa-comment"></i></button>
+            </div>
+            <% oneTweet.likes=20 %>
+              <div class="like-container">
+                <button class="like">♡</button>
+                <span class="number-likes">
+                  <%= oneTweet.likes %>
+                </span>
+              </div>
+              <div class="retweet-container">
+                <button class="retweet"><i class="fa-solid fa-retweet"></i></button>
+                <span class="number-retweets">
+                  <%= oneTweet.retweets %>
+                </span>
+              </div>
+          </div>
+          <form method="POST" action="/home/<%= oneTweet._id %>">
+            <p class="replying-to">Replying to @<%= %>
+            </p>
+            <div class="show-tweet-text-container">
+              <label for="content">
+                <img class="profile-image" src="<%= currentUser.profilePic %>"/>
+              </label>
+              <textarea name="content" id="content" placeholder="Tweet your reply"
+                onkeyup="autoAdjustTextArea(this);"></textarea>
+            </div>
+            <div class="image-tweet-button">
+              <input autocomplete="off" class="image-input" type="text" name="image" placeholder="image.png" />
+              <input type="submit" value="Reply" class="tweetButton" />
+            </div>
+          </form>
+        </div>
+        </div>
+      </section>
+      <script>
+        // This is to make text areas adjust automatically
+        function autoAdjustTextArea(o) {
+          o.style.height = "1px"; // Prevent height from growing when deleting lines.
+          o.style.height = o.scrollHeight + "px";
+        }
+        // Get a reference to the text area.
+        var txtArea = document.getElementsByClassName("noscrollbars")[0];
+        // Generate some random characters of length between 150 and 300.
+        txtArea.value = randChars(chars, randRange(150, 300));
+        // Trigger the event.
+        autoAdjustTextArea(txtArea);
+
+        const likeButton = document.querySelector('.like')
+        const retweetButton = document.querySelector('.retweet')
+        const tweetLikes = document.querySelector('.number-likes')
+        const tweetRetweets = document.querySelector('.number-retweets')
+
+        likeButton.addEventListener('click', () => {
+          oneTweet.likes += 1;
+          tweetLikes.innerHTML = `${oneTweet.likes += 1}`
+        })
+      </script>
+    </body>
+
+</html>

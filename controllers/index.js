@@ -1,4 +1,6 @@
+require("../config/db.connection");
+
 module.exports = {
-    signup: require('./auth_controller'),
-    home: require('./home_controller')
-}
+  auth: require("./auth_controller"),
+  home: require("./home_controller"),
+};

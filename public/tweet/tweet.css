@@ -1,0 +1,149 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.show-content {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100px 600px;
+    height: 100vh;
+}
+
+.tweet-container {
+    width: 600px;
+    padding: 0 15px 0 15px;
+    border-left: 1px solid rgb(70, 70, 70);
+    border-right: 1px solid rgb(70, 70, 70);
+}
+
+.img-container {
+    margin: none;
+    padding: none;
+    display: flex;
+    justify-content: center;
+}
+
+.tweet-image {
+    margin: none;
+    padding: none;
+    width: 450px;
+    height: 400px;
+    border-radius: 6%;
+}
+
+.like-retweet-buttons {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(70, 70, 70);
+    border-top: 1px solid rgb(70, 70, 70);
+}
+
+.home-like-retweet-buttons {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(70, 70, 70);
+}
+
+.content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0 56px 8px 58px;
+    color: white;
+}
+
+.like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    font-size: 25px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: rgb(70, 70, 70);
+    transition: 0.3s;
+}
+
+.like:hover {
+    background-color: rgba(255, 78, 181, 0.164);
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(248, 61, 192);
+}
+
+.retweet {
+    background: transparent;
+    border: none;
+}
+
+.retweet i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    font-size: 25px;
+    border: none;
+    border-radius: 50%;
+    color: rgb(70, 70, 70);
+    transition: 0.3s;
+}
+
+.retweet i:hover {
+    background-color: rgba(1, 145, 1, 0.164);
+    border-radius: 50%;
+    color: rgb(0, 168, 0);
+    cursor: pointer;
+}
+
+.comment-button {
+    background: transparent;
+    border: none;
+}
+
+.comment-button i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    font-size: 25px;
+    border: none;
+    border-radius: 50%;
+    color: rgb(70, 70, 70);
+    transition: 0.3s;
+}
+
+.comment-button i:hover {
+    background-color: rgba(47, 132, 201, 0.164);
+    border-radius: 50%;
+    color: rgb(0, 67, 250);
+    cursor: pointer;
+}
+
+.retweet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.replying-to {
+    margin-top: 10px;
+    margin-left: 98px;
+}
+
+.show-tweet-text-container {
+    display: flex;
+    border-bottom: 1px solid rgb(70, 70, 70);
+    margin-bottom: 15px;
+  }

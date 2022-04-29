@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs', { page: 'login' } ) %> <%-
+  include('../partials/nav.ejs', {page: 'nav'}) %>
+  <body class="has-navbar-fixed-top">
+    <section class="hero is-fullheight-with-navbar is-link">
+      <div class="hero-body is-flex-direction-column">
+        <h1 class="title">Login</h1>
+        <form action="/auth/login" method="POST" class="box">
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input
+                name="email"
+                class="input"
+                type="email"
+                placeholder="example@domain.com"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input
+                name="password"
+                class="input"
+                type="password"
+                placeholder="******"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="button is-link is-fullwidth">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="text">
+        <h3>Dont have an account? Click Register to get started!</h3>
+      </div>
+    </section>
+    <main class="container is-max-widescreen"></main>
+  </body>
+</html>
