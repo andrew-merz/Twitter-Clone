@@ -46,7 +46,15 @@
             <div>
               <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
               tweet=tweets[idx] %>
-              <p class="username">@<%=currentUser.username%></p>
+              <div class="tweetPic-user">
+                <p class="username">
+                  <img
+                    class="profile-image"
+                    src="<%=currentUser.profilePic%>"
+                  />
+                  @<%=tweet.user%>
+                </p>
+              </div>
               <small> <%= new Date(tweet.createdAt).toLocaleString() %> </small>
               <p class="tweet-text"><%= tweet.content %></p>
               <div class="image-container">
