@@ -8,6 +8,7 @@ tweetSchema = mongoose.Schema(
     },
     image: {
       type: String,
+      default: '',
     },
     user: {
       type: mongoose.Types.ObjectId,

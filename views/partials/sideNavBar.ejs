@@ -2,34 +2,34 @@
 <nav class="sideNavbar">
     <ul class="navList">
         <li class="tweeterLogo">
-            <a href="/home/"><i class="fa-brands fa-twitter"></i></a>
+            <a title="Home" href="/home/"><i class="fa-brands fa-twitter"></i></a>
         </li>
 
         <li class = "homeIcon">
-            <a href="/home"><i class="fa-solid fa-house"></i></a>
+            <a title="Home" href="/home"><i class="fa-solid fa-house"></i></a>
         </li>
 
 
         <li class = "logOutIcon">
-            <a href="/auth/logout"><i class="fa-solid fa-arrow-right-from-bracket" title="log out"></i></a>
+            <a title="Logout" href="/auth/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </li>
 
 
         <li class = "bookMarkIcon">
-            <a href="/home/bookmarks"><i class="fa-regular fa-bookmark"></i></a>
+            <a title="Bookmarks" href="/home/bookmarks"><i class="fa-regular fa-bookmark"></i></a>
         </li>
 
         <% const user = currentUser%>
         <li class="profileIcon">
 
-            <a href="/home/<%= user.id %>/editprofile"><i class="fa-regular fa-user"></i></a>
+            <a title="Edit Profile" href="/home/<%= user.id %>/editprofile"><i class="fa-regular fa-user"></i></a>
 
             <!-- <a href="/home/<%= user.id %>/editprofile"><img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" title="Profile"></a> -->
 
         </li>
 
         <li class = "tweetIcon">
-            <a href="/home"><img src="https://i1.wp.com/credomobblog.wpengine.com/wp-content/uploads/2018/04/1060_icons_compose-tweet.png?ssl=1" title="Tweet"></a>
+            <a title="Tweet" href="/home"><img src="https://i1.wp.com/credomobblog.wpengine.com/wp-content/uploads/2018/04/1060_icons_compose-tweet.png?ssl=1"></a>
         </li>
 
     </ul>
