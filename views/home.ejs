@@ -1,33 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs',{ pageName : "Twitter home" }) %>
-  <%- include('./partials/nav.ejs', {page: 'nav' }) %>
-
-    <body class="home-body">
-      <div class="homeMainContent">
-        <div>
-          <%- include('partials/sideNavBar.ejs')%>
-        </div>
-        <main class="twitter-home-container">
-          <section>
-            <div>
-              <h2 id="title">Home</h2>
-            </div>
-          </section>
-          <form method="POST" action="/home">
-            <div class="tweet-text-container">
-              <label for="content">
-                <img class="profile-image" src="<%= currentUser.profilePic %>" />
-              </label>
-              <textarea name="content" id="content" placeholder="What's happening?"
-                onkeyup="autoAdjustTextArea(this);"></textarea>
-              <input name="user" id="user" type="hidden" value="<%=currentUser.id%>" />
-            </div>
-            <div class="image-tweet-button">
-              <input autocomplete="off" class="image-input" type="text" name="image" placeholder="image.png" />
-              <input type="submit" value="Tweet" class="tweetButton" />
-            </div>
-          </form>
+  <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %> <%-
+  include('./partials/nav.ejs', {page: 'nav' }) %>
   <body class="home-body">
     <div class="homeMainContent">
       <div><%- include('partials/sideNavBar.ejs')%></div>
@@ -58,13 +32,6 @@
               type="hidden"
               value="<%=currentUser.id%>"
             />
-            <input
-              name="user"
-              id="user"
-              type="hidden"
-              value="<%=currentUser.profilePic%>"
-            />
-
             <!--
               <input
               autocomplete="off"
@@ -86,35 +53,9 @@
             <input type="submit" value="Tweet" class="tweetButton" />
           </div>
         </form>
-
-          <main class="container">
+        <main class="container">
+          <div>
             <div>
-              <div>
-                <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const tweet=tweets[idx] %>
-                    <div class="tweetPic-user">
-                      <p class="username">
-                        <img class="profile-image" src="<%=currentUser.profilePic%>" />
-                        @<%=tweet.user.username%>
-                      </p>
-                    </div>
-                    <small>
-                      <%= new Date(tweet.createdAt).toLocaleString() %>
-                    </small>
-                    <p class="tweet-text">
-                      <%= tweet.content %>
-                    </p>
-                    <div class="image-container">
-                      <% if (tweet.image !== '') { %>
-                        <img class="card-image" src="<%=tweet.image%>" />
-                        <% } %>
-                    </div>
-                    <div class="home-like-retweet-buttons">
-                      <a class="comment-button" href=""><i class="fa-solid fa-comment"></i></a>
-                      <input class="like" type="button" value="♡" />
-                      <a class="retweet" href=""><i class="fa-solid fa-retweet"></i></a>
-                    </div>
-                    <% } %>
-
               <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
               tweet=tweets[idx] %>
               <div class="tweetPic-user">
@@ -123,30 +64,40 @@
                   @<%=tweet.user.username%>
                 </p>
               </div>
+              <small> <%= new Date(tweet.createdAt).toLocaleString() %> </small>
+              <p class="tweet-text"><%= tweet.content %></p>
+              <div class="image-container">
+                <% if(tweet.image !== ''){%>
+                <img class="card-image" src="<%=tweet.image%>" />
+                <%}%>
+              </div>
+              <div class="home-like-retweet-buttons">
+                <a class="comment-button" href=""
+                  ><i class="fa-solid fa-comment"></i
+                ></a>
+                <input class="like" type="button" value="♡" />
+                <a class="retweet" href=""
+                  ><i class="fa-solid fa-retweet"></i
+                ></a>
+              </div>
+              <% } %>
             </div>
-          </main>
+          </div>
         </main>
-      </div>
-
-      <script>
-        // const imgInput = document.querySelector('.image-input');
-        // const tweetImage = document.querySelector('.card-image');
-        // if (imgInput == null) {
-        //   tweetImage.classList.remove('card-image')
-        // }
-
-        // This is to make text areas adjust automatically
-        function autoAdjustTextArea(o) {
-          o.style.height = "1px"; // Prevent height from growing when deleting lines.
-          o.style.height = o.scrollHeight + "px";
-        }
-        // Get a reference to the text area.
-        var txtArea = document.getElementsByClassName("noscrollbars")[0];
-        // Generate some random characters of length between 150 and 300.
-        txtArea.value = randChars(chars, randRange(150, 300));
-        // Trigger the event.
-        autoAdjustTextArea(txtArea);
-      </script>
-    </body>
-
+      </main>
+    </div>
+    <script>
+      // This is to make text areas adjust automatically
+      function autoAdjustTextArea(o) {
+        o.style.height = "1px"; // Prevent height from growing when deleting lines.
+        o.style.height = o.scrollHeight + "px";
+      }
+      // Get a reference to the text area.
+      var txtArea = document.getElementsByClassName("noscrollbars")[0];
+      // Generate some random characters of length between 150 and 300.
+      txtArea.value = randChars(chars, randRange(150, 300));
+      // Trigger the event.
+      autoAdjustTextArea(txtArea);
+    </script>
+  </body>
 </html>
