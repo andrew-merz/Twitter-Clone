@@ -64,21 +64,16 @@
 
       <script>
         // This is to make text areas adjust automatically
-        function autoGrow(oField) {
-          if (oField.scrollHeight > oField.clientHeight) {
-            oField.style.height = oField.scrollHeight + "px";
-          }
-        }
         function autoAdjustTextArea(o) {
           o.style.height = '1px'; // Prevent height from growing when deleting lines.
           o.style.height = o.scrollHeight + 'px';
         }
         // Get a reference to the text area.
-        var txtAra = document.getElementsByClassName('noscrollbars')[0];
+        var txtArea = document.getElementsByClassName('noscrollbars')[0];
         // Generate some random characters of length between 150 and 300.
-        txtAra.value = randChars(chars, randRange(150, 300));
+        txtArea.value = randChars(chars, randRange(150, 300));
         // Trigger the event.
-        autoAdjustTextArea(txtAra);
+        autoAdjustTextArea(txtArea);
       </script>
     </body>
 
