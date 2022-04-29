@@ -33,6 +33,13 @@
               type="hidden"
               value="<%=currentUser.id%>"
             />
+            <input
+              name="user"
+              id="user"
+              type="hidden"
+              value="<%=currentUser.profilePic%>"
+            />
+
             <!--
               <input
               autocomplete="off"
@@ -62,10 +69,7 @@
               tweet=tweets[idx] %>
               <div class="tweetPic-user">
                 <p class="username">
-                  <img
-                    class="profile-image"
-                    src="<%=currentUser.profilePic%>"
-                  />
+                  <img class="profile-image" src="<%=tweet.user.profilePic%>" />
                   @<%=tweet.user.username%>
                 </p>
               </div>
