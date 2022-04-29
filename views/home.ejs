@@ -46,6 +46,7 @@
             <div>
               <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
               tweet=tweets[idx] %>
+              <p class="username"><%=currentUser.username%></p>
               <p class="tweet-text"><%= tweet.content %></p>
               <div class="image-container">
                 <img
