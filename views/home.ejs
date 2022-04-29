@@ -27,7 +27,21 @@
               placeholder="What's happening?"
               onkeyup="autoAdjustTextArea(this);"
             ></textarea>
-            <!-- <input autocomplete="off" id="content" type="text" name="content" placeholder="What's happening?"> -->
+            <input
+              name="user"
+              id="user"
+              type="hidden"
+              value="<%=currentUser.id%>"
+            />
+            <!--
+              <input
+              autocomplete="off"
+              id="content"
+              type="text"
+              name="content"
+              placeholder="What's happening?"
+            />
+            -->
           </div>
           <div class="image-tweet-button">
             <input
@@ -52,7 +66,7 @@
                     class="profile-image"
                     src="<%=currentUser.profilePic%>"
                   />
-                  @<%=tweet.user%>
+                  @<%=tweet.user.username%>
                 </p>
               </div>
               <small> <%= new Date(tweet.createdAt).toLocaleString() %> </small>
