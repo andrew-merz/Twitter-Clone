@@ -89,7 +89,8 @@ router.get('/:id/editprofile', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const tweet = await db.Tweet.findById(req.params.id)
-        const context = { oneTweet: tweet };
+        const currentUser = req.session.currentUser;
+        const context = { oneTweet: tweet, currentUser};
         return res.render('show.ejs', context);
     } catch (error) {
         console.log(error);
