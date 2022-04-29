@@ -6,7 +6,7 @@
         </li>
 
         <li class = "homeIcon">
-            <a href="/home"><i class="fa-solid fa-house"></i></a>
+            <a href="/home"><i class="fa-solid fa-house" title="home"></i></a>
         </li>
 
 
@@ -16,13 +16,13 @@
 
 
         <li class = "bookMarkIcon">
-            <a href="/home/bookmarks"><i class="fa-regular fa-bookmark"></i></a>
+            <a href="/home/bookmarks"><i class="fa-regular fa-bookmark" title="likes"></i></a>
         </li>
 
         <% const user = currentUser%>
         <li class="profileIcon">
 
-            <a href="/home/<%= user.id %>/editprofile"><i class="fa-regular fa-user"></i></a>
+            <a href="/auth/<%= user.id %>/editprofile"><i class="fa-regular fa-user" title="profile"></i></a>
 
             <!-- <a href="/home/<%= user.id %>/editprofile"><img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" title="Profile"></a> -->
 

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { User } = require("../models");
+const db = require("../models");
 
 router.get("/register", function (req, res) {
   return res.render("auth/register");
@@ -19,6 +20,19 @@ router.get("/logout", async function (req, res) {
   } catch (error) {
     console.log(error);
     return res.send(error);
+  }
+});
+
+router.get("/:id/editprofile", async (req, res, next) => {
+  try {
+    const updatedUser = await db.User.findById(req.params.id);
+    //console.log(updatedUser.profilePic);
+    const context = { currentUser: updatedUser, id: req.params.id };
+    return res.render("editProfile.ejs", context);
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
   }
 });
 
@@ -83,5 +97,43 @@ router.post("/login", async function (req, res) {
     res.send(err);
   }
 });
+
+
+
+router.put("/:id", async (req, res, next) => {
+  try {
+    const updatedUser = await db.User.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    );
+    console.log(updatedUser);
+    //const updatedUsername = await db.Product.findByIdAndUpdate(req.params.id, req.body);
+
+    return res.redirect(`/home`);
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
+//practice
+router.put("/:id/deleteprofile", async (req,res,next) => {
+  try {
+    const updatedUser = await db.User.findById(
+      req.params.id
+      
+    );
+    console.log(updatedUser)
+    updatedUser.updateOne(updatedUser, {$set: {profilePic:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'}})
+    //updatedUser.profilePic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'
+    //req.session.currentUser.profilePic =  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'
+    return res.redirect('/home');
+  }catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+})
 
 module.exports = router;
