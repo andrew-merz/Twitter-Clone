@@ -45,7 +45,7 @@ router.get("/", async (req, res, next) => {
     const tweets = await db.Tweet.find({});
     const currentUser = req.session.currentUser;
 
-    console.log(currentUser);
+    // console.log(currentUser);
     //from here trying
     const context = { tweets, currentUser };
     return res.render("home.ejs", context);
@@ -71,18 +71,18 @@ router.get("/", async (req, res, next) => {
 //     }
 // })
 
-router.get("/:id/editprofile", async (req, res, next) => {
-  try {
-    const updatedUser = await db.User.findById(req.params.id);
-    console.log(updatedUser);
-    const context = { currentUser: updatedUser, id: req.params.id };
-    return res.render("editProfile.ejs", context);
-  } catch (error) {
-    console.log(error);
-    req.error = error;
-    return next();
-  }
-});
+// router.get("/:id/editprofile", async (req, res, next) => {
+//   try {
+//     const updatedUser = await db.User.findById(req.params.id);
+//     console.log(updatedUser);
+//     const context = { currentUser: updatedUser, id: req.params.id };
+//     return res.render("editProfile.ejs", context);
+//   } catch (error) {
+//     console.log(error);
+//     req.error = error;
+//     return next();
+//   }
+// });
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -137,21 +137,21 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-router.put("/:id", async (req, res, next) => {
-  try {
-    const updatedUser = await db.User.findByIdAndUpdate(
-      req.params.id,
-      req.body
-    );
-    console.log(updatedUser);
-    //const updatedUsername = await db.Product.findByIdAndUpdate(req.params.id, req.body);
+// router.put("/:id", async (req, res, next) => {
+//   try {
+//     const updatedUser = await db.User.findByIdAndUpdate(
+//       req.params.id,
+//       req.body
+//     );
+//     console.log(updatedUser);
+//     //const updatedUsername = await db.Product.findByIdAndUpdate(req.params.id, req.body);
 
-    return res.redirect(`/home`);
-  } catch (error) {
-    console.log(error);
-    req.error = error;
-    return next();
-  }
-});
+//     return res.redirect(`/home`);
+//   } catch (error) {
+//     console.log(error);
+//     req.error = error;
+//     return next();
+//   }
+// });
 
 module.exports = router;
