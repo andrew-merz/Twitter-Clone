@@ -5,7 +5,7 @@ const app = express();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const navLinks = require("./navLinks");
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 require("./config/db.connection");
 
