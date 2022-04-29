@@ -7,7 +7,7 @@
     <div class="homeMainContent">
 
 
-<form method = "POST" action = "/home/<%= currentUser.id %>?_method=PUT">
+<form action = "/home/<%= id %>?_method=PUT" method = "POST">
     <h1>Edit Profile</h1>
     <div>
         <label>User name</label>
@@ -17,7 +17,7 @@
 
     <div>
         <label>Profile picture</label>
-        <input type="text" name="image" value="<%= currentUser.profilePic%>"/>
+        <input type="text" name="profilePic" value="<%= currentUser.profilePic%>"/>
     </div>
     <div>
         <input type="submit" value="Edit Profile: <%= currentUser.username%>"/>
