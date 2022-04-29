@@ -76,7 +76,7 @@ router.get('/:id/editprofile', async (req, res, next) => {
     try {
         const updatedUser = await db.User.findById(req.params.id);
         console.log(updatedUser)
-        const context = {currentUser : updatedUser}
+        const context = {currentUser : updatedUser, id: req.params.id}
         return res.render('editProfile.ejs', context)
 
     } catch (error) {
