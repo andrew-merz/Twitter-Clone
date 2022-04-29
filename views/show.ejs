@@ -23,7 +23,9 @@
             </p>
           </div>
           <div class="img-container">
-            <img class="tweet-image" src="<%= oneTweet.image %>" alt="Image" />
+            <% if (oneTweet.image !== '') { %>
+            <img class="tweet-image" src="<%= oneTweet.image %>" alt="" />
+            <% } %> 
           </div>
           <div class="like-retweet-buttons">
             <div>
@@ -47,9 +49,8 @@
             <p class="replying-to">Replying to @<%= %>
             </p>
             <div class="show-tweet-text-container">
-              <input class="replying-to" value="Replying to @<%= %>">
               <label for="content">
-                <img class="profile-image" src="<%= currentUser.profilePic %>" alt="Placeholder image" />
+                <img class="profile-image" src="<%= currentUser.profilePic %>"/>
               </label>
               <textarea name="content" id="content" placeholder="Tweet your reply"
                 onkeyup="autoAdjustTextArea(this);"></textarea>
