@@ -1,12 +1,10 @@
 .navbar {
-  background-color: rgb(112, 110, 110);
+  background-color: rgb(0, 0, 0);
 }
 .nav-names {
   color: whitesmoke;
 }
 .navbar div {
   display: flex;
-  /* justify-content: flex-end; */
-  /* justify-content: space-evenly; */
-  align-items: center;
+  justify-content: space-around;
 }
