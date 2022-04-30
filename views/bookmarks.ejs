@@ -4,45 +4,56 @@
   include('./partials/nav.ejs', {page: 'nav' }) %>
   <link rel="stylesheet" href="/tweet/tweet.css" />
   <link rel="stylesheet" href="/styles/main.css" />
-  <body>
+  <body class="home-body">
     <%- include('partials/sideNavBar.ejs')%>
     <div class="likesContent">
       <section>
-        <div>
+        <div class="likes-display">
           <h2 class="title">Bookmarks</h2>
-        </div>
-        <h5>@<%= currentUser.username %></h5>
-      </section>
 
-      <main class="container">
-        <div>
-          <div>
-            <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
-            tweet=tweets[idx] %>
-            <div class="tweetPic-user">
-              <p class="username">
-                <img class="profile-image" src="<%=tweet.user.profilePic%>" />
-                @<%=tweet.user.username%>
-              </p>
-            </div>
-            <small> <%= new Date(tweet.createdAt).toLocaleString() %> </small>
-            <p class="tweet-text"><%= tweet.content %></p>
-            <div class="image-container">
-              <% if(tweet.image !== ''){%>
-              <img class="card-image" src="<%=tweet.image%>" />
-              <%}%>
-            </div>
-            <div class="home-like-retweet-buttons">
-              <a class="comment-button" href=""
-                ><i class="fa-solid fa-comment"></i
-              ></a>
-              <input class="like" type="button" value="♡" />
-              <a class="retweet" href=""><i class="fa-solid fa-retweet"></i></a>
-            </div>
-            <% } %>
-          </div>
+          <h5>@<%= currentUser.username %></h5>
         </div>
-      </main>
+      </section>
+      <div class="homeMainContent anything">
+        <main class="twitter-home-container">
+          <main class="container">
+            <div>
+              <div>
+                <% for(let idx=tweets.length -1; idx >= 0; idx--){ %> <% const
+                tweet=tweets[idx] %>
+                <div class="tweetPic-user">
+                  <p class="username">
+                    <img
+                      class="profile-image"
+                      src="<%=tweet.user.profilePic%>"
+                    />
+                    @<%=tweet.user.username%>
+                  </p>
+                </div>
+                <small>
+                  <%= new Date(tweet.createdAt).toLocaleString() %>
+                </small>
+                <p class="tweet-text"><%= tweet.content %></p>
+                <div class="image-container">
+                  <% if(tweet.image !== ''){%>
+                  <img class="card-image" src="<%=tweet.image%>" />
+                  <%}%>
+                </div>
+                <div class="home-like-retweet-buttons">
+                  <a class="comment-button" href=""
+                    ><i class="fa-solid fa-comment"></i
+                  ></a>
+                  <input class="like" type="button" value="♡" />
+                  <a class="retweet" href=""
+                    ><i class="fa-solid fa-retweet"></i
+                  ></a>
+                </div>
+                <% } %>
+              </div>
+            </div>
+          </main>
+        </main>
+      </div>
     </div>
   </body>
 </html>

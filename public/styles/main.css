@@ -178,3 +178,7 @@ body {
 .title {
   color: whitesmoke;
 }
+
+.likes-display {
+  text-align: center;
+}
