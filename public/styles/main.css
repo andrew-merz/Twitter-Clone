@@ -5,13 +5,13 @@ body {
 .home-body {
   background-color: black;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #title {
   color: white;
   font-size: 25px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   margin-left: 15px;
 }
@@ -76,7 +76,7 @@ body {
 }
 
 #content {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   background-color: black;
   border: none;
@@ -101,7 +101,7 @@ body {
 }
 
 .tweetButton {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   background-color: #00acee;
   border-radius: 60px;
@@ -139,7 +139,7 @@ body {
 
 .image-input::placeholder {
   color: white;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .image-input:focus {
@@ -156,18 +156,19 @@ body {
 .image-container {
   display: flex;
   justify-content: flex-end;
-  margin: 10px 30px 10px 0;
+  margin: 10px 110px 10px 0;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .tweet-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 17px;
-    line-height: 28px;
-    margin: 10px 71px 0 72px;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  line-height: 28px;
+  margin: 10px 71px 0 72px;
 }
 
-.auto_height { /* CSS */
+.auto_height {
+  /* CSS */
   width: 100%;
 }

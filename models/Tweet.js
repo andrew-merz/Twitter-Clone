@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-tweetSchema = mongoose.Schema(
+const tweetSchema = new mongoose.Schema(
   {
     content: {
       type: String,
@@ -8,7 +8,7 @@ tweetSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      default: '',
+      default: "",
     },
     user: {
       type: mongoose.Types.ObjectId,
