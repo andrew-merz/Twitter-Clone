@@ -8,7 +8,7 @@
   </div>
   <div class="navbar-menu navbar-end">
     <% if (typeof user !== 'undefined') { %>
-    <p class="navbar-item"><%= user.username %></p>
+    <p class="navbar-item"><%= currentUser.username %></p>
     <% } %>
     <!-- routes -->
     <% if (typeof routes !== 'undefined') { %> <% routes.forEach((route) => { %>
