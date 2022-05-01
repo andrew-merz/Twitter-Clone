@@ -19,18 +19,14 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (request, response) => response.send("Welcome to Twitter!"));
 
-/* SECTION App Config */
 app.use(
   session({
-    // where to store the sessions in mongodb
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI,
     }),
-    // secret key is used to sign every cookie to say its is valid
     secret: "secretKey",
     resave: false,
     saveUninitialized: false,
-    // configure the experation of the cookie
     cookie: {
       maxAge: 1000 * 60 * 120, // two hours
     },

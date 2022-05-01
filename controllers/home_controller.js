@@ -8,11 +8,7 @@ router.get("/", async (req, res, next) => {
   try {
     const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
-
-    //console.log(currentUser);
-    //from here trying
     const context = { tweets, currentUser };
-    //console.log(JSON.stringify(tweet.user));
     return res.render("home.ejs", context);
   } catch (error) {
     console.log(error);
@@ -26,9 +22,7 @@ router.get("/", async (req, res, next) => {
 //no tweet button in bookmark.ejs
 router.get("/bookmarks", async (req, res, next) => {
   try {
-    //later change tweets to only bookmarked ones
     const tweets = await db.Tweet.find({});
-
     const currentUser = req.session.currentUser;
     console.log(tweets);
     const context = { tweets, currentUser };
@@ -44,9 +38,6 @@ router.get("/", async (req, res, next) => {
   try {
     const tweets = await db.Tweet.find({});
     const currentUser = req.session.currentUser;
-
-    // console.log(currentUser);
-    //from here trying
     const context = { tweets, currentUser };
     return res.render("home.ejs", context);
   } catch (error) {
