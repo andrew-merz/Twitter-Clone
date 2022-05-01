@@ -182,3 +182,22 @@ body {
 .likes-display {
   text-align: center;
 }
+
+.tweetPic-user {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 10px;
+}
+
+.tweetPic-user small {
+  margin-left: 10px;
+}
+
+.modal {
+  height: 30%;
+  width: 30%;
+  background-color: white;
+}
