@@ -3,7 +3,7 @@
   <%- include('../partials/head.ejs', { page: 'login' } ) %> <%-
   include('../partials/nav.ejs', {page: 'nav'}) %>
   <body>
-    <section class="hero is-fullheight-with-navbar is-link">
+    <section id="black" class="hero is-fullheight-with-navbar is-link">
       <div class="hero-body is-flex-direction-column">
         <h1 class="title">Login</h1>
         <form action="/auth/login" method="POST" class="box">
@@ -31,7 +31,7 @@
           </div>
           <div class="field">
             <div class="control">
-              <button class="button is-link is-fullwidth">Submit</button>
+              <button class="button is-fullwidth">Submit</button>
             </div>
           </div>
         </form>

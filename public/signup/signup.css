@@ -1,3 +1,4 @@
+/* Styling edit profile page */
 .editProfile-body {
     display: grid;
     grid-template-columns: 100px 600px;
@@ -65,4 +66,36 @@
 .button-container {
     display: flex;
     justify-content: center;
+}
+
+/* Styling login and register page */
+.hero-body {
+    background-color: black;
+}
+
+.text {
+    background-color: black;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#black {
+    background-color: black;
+}
+
+.control button {
+    background-color: #1DA1F2;
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.control button:hover {
+    /* border: 2px solid black; */
+    background-color: #007fce;
+    color: whitesmoke;
 }
