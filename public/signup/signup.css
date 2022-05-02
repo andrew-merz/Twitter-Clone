@@ -1,0 +1,68 @@
+.editProfile-body {
+    display: grid;
+    grid-template-columns: 100px 600px;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.profile-form {
+    border-left: 1px solid rgb(70, 70, 70);
+    border-right: 1px solid rgb(70, 70, 70);
+    padding: 0 15px 0 15px;
+    font-size: 19px;
+}
+
+.profile-form .float {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-form .float label {
+    float: left;
+    margin-right: auto;
+    padding: 0;
+}
+
+.profile-form .float input {
+    border: 2px solid rgba(245, 245, 245, 0.973);
+    background-color: rgba(245, 245, 245, 0.973);
+    width: 200px;
+    height: 30px;
+    font-size: 17px;
+}
+
+.profile-form .float input:focus {
+    outline: none;
+    border-color: #1DA1F2;
+}
+
+#profiletitle {
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+#profile-image-username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: rgb(70, 70, 70);
+}
+
+#profile-image-username label {
+    margin-right: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}

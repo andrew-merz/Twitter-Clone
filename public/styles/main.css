@@ -165,7 +165,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 17px;
   line-height: 28px;
-  margin: 10px 71px 0 72px;
+  margin: 0 71px 0 96px;
 }
 
 .auto_height {
@@ -186,6 +186,7 @@ body {
 .tweetPic-user {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .username {
@@ -211,21 +212,15 @@ body {
 .profile {
   background-color: black;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 100px 600px;
   justify-content: center;
   height: 100vh;
-  margin-top: 20px;
 }
-
-.profiletitle {
-  font-size: 32px;
-}
-
 
 .buttonprofile {
   appearance: none;
   background-color: #000000;
-  border: 2px solid #1A1A1A;
+  border: 2px solid rgb(70, 70, 70);
   border-radius: 15px;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -246,7 +241,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
+  width: 80%;
   will-change: transform;
 }
 
@@ -262,4 +257,12 @@ body {
 .buttonprofile:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.container-link {
+  color: white;
+}
+
+.container-link:hover {
+  color: white;
 }
