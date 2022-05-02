@@ -3,9 +3,11 @@
   border-bottom: 10px solid rgba(255, 255, 255, 0.945);
   padding-bottom: 0;
 }
+
 .nav-names {
   color: whitesmoke;
 }
+
 .navbar div {
   background-color: black;
   margin: 0 0 5px 0;
@@ -26,3 +28,4 @@
 .navbar div a:hover {
   color: #1DA1F2;
 }
+

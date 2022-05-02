@@ -1,12 +1,13 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: black;
 }
 
 .show-content {
     display: grid;
     justify-content: center;
     grid-template-columns: 100px 600px;
-    height: 100vh;
+    height: 100%;
 }
 
 .tweet-container {
@@ -127,6 +128,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .3s;
 }
 
 .replying-to {
@@ -204,4 +206,8 @@ body {
     border: none;
     border-bottom: 1px solid rgb(70, 70, 70);
     padding: 10px 0 10px 0;
+}
+
+.number-likes {
+    color: rgb(80, 80, 80);
 }
