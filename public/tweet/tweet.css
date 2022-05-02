@@ -161,11 +161,23 @@ body {
     font-size: 17px;
     display: flex;
     /* border-bottom: 1px solid rgb(70, 70, 70); */
-    vertical-align: middle;
+    justify-content: center;
+    padding: 25px 10px 25px 0;
+    border-bottom: 1px solid rgb(70, 70, 70);
 }
-  
+
+.comment-title {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    text-decoration: underline;
+}
+
 .commentarea p {
-    margin: 10px 0 10px 0;
+    vertical-align: middle;
+    text-align: center;
 }
   
 .commentButton {
@@ -225,3 +237,4 @@ body {
 .number-likes {
     color: rgb(80, 80, 80);
 }
+
