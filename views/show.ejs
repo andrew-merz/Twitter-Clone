@@ -8,31 +8,34 @@
         <div>
           <%- include('partials/sideNavBar.ejs')%>
         </div>
-        <!-- <h3>Tweet</h3>
-                <%= /* user.avatar */%>
-                    <p>
-                        <%= /* user.name */%>
-                    </p>
-                    <p>
-                        <%= /* user.username */%>
-                    </p> -->
+       <body class="home-body">
         <div class="tweet-container">
-          <div class="">
-            <p class="content">
-              <%= oneTweet.content %>
+          
+          <div class="tweetPic-user">
+            <img class="profile-image" src="<%=oneTweet.user.profilePic%>" />
+            <p class="username">
+              @<%=oneTweet.user%>
             </p>
+            <span> | </span>
+            <small>
+              <%= new Date(oneTweet.createdAt).toLocaleString() %>
+            </small>
           </div>
-          <div class="img-container">
-            <% if (oneTweet.image !== '') { %>
-            <img class="tweet-image" src="<%= oneTweet.image %>" alt="" />
-            <% } %> 
+          <p class="tweet-text">
+            <%= oneTweet.content %>
+          </p>
+          <div class="image-container">
+            <% if(oneTweet.image !=='' ){%>
+              <img class="card-image" src="<%=oneTweet.image%>" />
+              <%}%>
           </div>
+       
           
           <div class="like-retweet-buttons">
             <div>
               <button class="comment-button"><i class="fa-solid fa-comment"></i></button>
             </div>
-            <% oneTweet.likes=20 %>
+            <% oneTweet.likes=0 %>
               <div class="like-container">
                 <button class="like">♡</button>
                 <span class="number-likes">
@@ -47,21 +50,7 @@
               </div>
               
           </div>
-          <!-- <form method="POST" action="/home/<%= oneTweet._id %>">
-            <p class="replying-to">Replying to @<%= %>
-            </p>
-            <div class="show-tweet-text-container">
-              <label for="content">
-                <img class="profile-image" src="<%= currentUser.profilePic %>"/>
-              </label>
-              <textarea name="content" id="content" placeholder="Tweet your reply"
-                onkeyup="autoAdjustTextArea(this);"></textarea>
-            </div>
-            <div class="image-tweet-button">
-              <input autocomplete="off" class="image-input" type="text" name="image" placeholder="image.png" />
-              <input type="submit" value="Reply" class="tweetButton" />
-            </div>
-          </form> -->
+         
           <form method="POST" action="/home/<%=oneTweet._id%>">
             <div class="tweet-text-container">
               <label for="content">
@@ -70,7 +59,7 @@
             </div>
           </form>
         </div>
-        </div>
+      </div>
       </section>
       <script>
         // This is to make text areas adjust automatically
