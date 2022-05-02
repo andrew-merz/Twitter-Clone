@@ -23,7 +23,7 @@ router.get("/", async (req, res, next) => {
 //no tweet button in bookmark.ejs
 router.get("/bookmarks", async (req, res, next) => {
   try {
-    const tweets = await db.Tweet.find({});
+    const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
     console.log(tweets);
     const context = { tweets, currentUser };
