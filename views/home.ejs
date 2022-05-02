@@ -42,8 +42,10 @@
                       </small>
                     </div>
                     <p class="tweet-text">
-                      
-                      <a href="/home/<%=tweet._id%>" style="color:white"><%= tweet.content %></a>
+
+                      <a href="/home/<%=tweet._id%>" style="color:white">
+                        <%= tweet.content %>
+                      </a>
                     </p>
                     <div class="image-container">
                       <% if(tweet.image !=='' ){%>
@@ -53,47 +55,29 @@
                     <div class="like-retweet-buttons">
                       <div>
                         <button class="comment-button openModal">
-                          <!-- <a href="/home/<%=tweet._id%>"></a> -->
                           <i class="fa-solid fa-comment"></i>
-                          
                         </button>
                       </div>
-                      <p class="tweet-text">
-                        <%= tweet.content %>
-                      </p>
-                      <div class="image-container">
-                        <% if(tweet.image !=='' ){%>
-                          <img class="card-image" src="<%=tweet.image%>" />
-                          <%}%>
+                      <div class="like-container">
+                          <button class="like">♡</button>
+                          <span class="number-likes">
+                            <%= tweet.likes %>
+                          </span>
                       </div>
-                </a>
-                <div class="like-retweet-buttons">
-                  <div>
-                    <button class="comment-button openModal">
-                      <i class="fa-solid fa-comment"></i>
-                    </button>
-                  </div>
-                  <div class="like-container">
-                    <% function myFunction(button) { tweet.likes +=1; } %>
-                      <button class="like" onclick="myFunction(this)">♡</button>
-                      <span class="number-likes">
-                        <%= tweet.likes %>
-                      </span>
-                  </div>
-                  <div class="retweet-container">
-                    <button class="retweet">
-                      <i class="fa-solid fa-retweet"></i>
-                    </button>
-                    <span class="number-retweets">
-                      <%= tweet.retweets %>
-                    </span>
-                  </div>
-                </div>
-                <% } %>
-      </div>
-      </div>
-      </main>
-      </main>
+                      <div class="retweet-container">
+                        <button class="retweet">
+                          <i class="fa-solid fa-retweet"></i>
+                        </button>
+                        <span class="number-retweets">
+                          <%= tweet.retweets %>
+                        </span>
+                      </div>
+                    </div>
+                    <% } %>
+              </div>
+            </div>
+          </main>
+        </main>
       </div>
       <script>
         // const like = document.querySelector('.like');
