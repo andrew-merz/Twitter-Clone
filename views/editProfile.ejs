@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="/signup/signup.css">
 <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %>
     <%- include('./partials/nav.ejs', {page: 'nav' }) %>
 
@@ -15,7 +14,7 @@
                         <div id="profiletitle">
                             <h1>Edit Profile</h1>
                         </div>
-                        <br>
+                        
                         <div id="profile-image-username">
                             <label for="content">
                                 <img class="profile-image" src="<%= currentUser.profilePic %>"
@@ -23,20 +22,20 @@
                             </label>
                             @<%= currentUser.username%>
                         </div>
-                        <br>
-                        <br>
+                        
+                        
                         <div class="float">
                             <label>Username:</label>
                             <input autocomplete="off" type="text" name="username" value="<%= currentUser.username%>" />
                         </div>
 
-                        <br>
+                        
                         <div class="float">
                             <label>Profile picture:</label>
                             <input autocomplete="off" type="text" name="profilePic" value="<%= currentUser.profilePic%>" />
                         </div>
 
-                        <br>
+                        
                         <div class="button-container">
                             <input class='buttonprofile' type="submit"
                                 value="Edit Profile: <%= currentUser.username%>" />

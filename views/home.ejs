@@ -32,62 +32,56 @@
             <div>
               <div>
                 <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const tweet=tweets[idx] %>
-                    <div class="tweetPic-user">
-                      <img class="profile-image" src="<%=tweet.user.profilePic%>" />
-                      <p class="username">@<%=tweet.user.username%>
-                      </p>
-                      <span> | </span>
-                      <small>
-                        <%= new Date(tweet.createdAt).toLocaleString() %>
-                      </small>
-                    </div>
-                    <p class="tweet-text">
-
+                  <section class="clickable-container">
                       <a href="/home/<%=tweet._id%>" style="color:white">
-                        <%= tweet.content %>
+                        <div class="tweetPic-user">
+                          <img class="profile-image" src="<%=tweet.user.profilePic%>" />
+                          <p class="username">@<%=tweet.user.username%>
+                          </p>
+                          <span> | </span>
+                          <small>
+                            <%= new Date(tweet.createdAt).toLocaleString() %>
+                          </small>
+                        </div>
+                        <p class="tweet-text">
+                          <%= tweet.content %>
+                        </p>
+                        <div class="image-container">
+                          <% if(tweet.image !=='' ){%>
+                            <img class="card-image" src="<%=tweet.image%>" />
+                            <%}%>
+                        </div>
                       </a>
-                    </p>
-                    <div class="image-container">
-                      <% if(tweet.image !=='' ){%>
-                        <a href="/home/<%=tweet._id%>"><img class="card-image" src="<%=tweet.image%>" /></a>
-                        <%}%>
-                    </div>
-                    <div class="like-retweet-buttons">
-                      <div>
-                        <button class="comment-button openModal">
-                          <i class="fa-solid fa-comment"></i>
-                        </button>
-                      </div>
-                      <div class="like-container">
+
+                      <div class="home-like-retweet-buttons">
+                        <div>
+                          <button class="comment-button openModal">
+                            <i class="fa-solid fa-comment"></i>
+                          </button>
+                        </div>
+                        <div class="like-container">
                           <button class="like">♡</button>
                           <span class="number-likes">
                             <%= tweet.likes %>
                           </span>
+                        </div>
+                        <div class="retweet-container">
+                          <button class="retweet">
+                            <i class="fa-solid fa-retweet"></i>
+                          </button>
+                          <span class="number-retweets">
+                            <%= tweet.retweets %>
+                          </span>
+                        </div>
                       </div>
-                      <div class="retweet-container">
-                        <button class="retweet">
-                          <i class="fa-solid fa-retweet"></i>
-                        </button>
-                        <span class="number-retweets">
-                          <%= tweet.retweets %>
-                        </span>
-                      </div>
-                    </div>
-                    <% } %>
+                    </section>
+                      <% } %>
               </div>
             </div>
           </main>
         </main>
       </div>
       <script>
-        // const like = document.querySelector('.like');
-        // const numberLike = document.querySelector('.number-likes');
-        // function myFunction() {
-        //   tweet.likes += 1;
-        //   numberLike.innerText += 1;
-        // }
-
-
         // This is to make text areas adjust automatically
         function autoAdjustTextArea(o) {
           o.style.height = "1px"; // Prevent height from growing when deleting lines.

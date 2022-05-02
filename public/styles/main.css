@@ -1,21 +1,9 @@
+/* Setting every page's default background to black */
 body {
   background-color: black;
 }
 
-.home-body {
-  background-color: black;
-  color: white;
-  font-family: "Roboto", sans-serif;
-}
-
-#title {
-  color: white;
-  font-size: 25px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  margin-left: 15px;
-}
-
+/* Side Navbar styling */
 .sideNavbar {
   position: fixed;
   font-size: 36px;
@@ -39,6 +27,21 @@ body {
 .sideNavbar a:hover {
   color: white;
   background-color: rgb(37, 37, 37);
+}
+
+/* Home page styling */
+.home-body {
+  background-color: black;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+#title {
+  color: white;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  margin-left: 15px;
 }
 
 .tweeterLogo {
@@ -134,7 +137,7 @@ body {
   margin-right: auto;
   float: left;
   width: 50vw;
-  margin-left: 51px;
+  margin-left: 24px;
 }
 
 .image-input::placeholder {
@@ -168,25 +171,10 @@ body {
   margin: 0 71px 0 96px;
 }
 
-.auto_height {
-  /* CSS */
-  width: 100%;
-}
-.likesContent {
-  color: whitesmoke;
-}
-.title {
-  color: whitesmoke;
-}
-
-.likes-display {
-  text-align: center;
-}
-
 .tweetPic-user {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .username {
@@ -197,18 +185,25 @@ body {
   margin-left: 10px;
 }
 
-.modal {
-  height: 30%;
-  width: 30%;
-  background-color: white;
+.home-like-retweet-buttons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(70, 70, 70);
 }
 
+.clickable-container:hover {
+  background-color: rgba(39, 39, 39, 0.15);
+}
+
+/* Styling bookmarks title */
 .bookmarks-title {
   font-size: 32px;
   font-weight: 700;
   margin: 5px 0 5px 0;
 }
 
+/* Styling Edit Profile page */
 .profile {
   background-color: black;
   display: grid;
@@ -257,12 +252,4 @@ body {
 .buttonprofile:active {
   box-shadow: none;
   transform: translateY(0);
-}
-
-.container-link {
-  color: white;
-}
-
-.container-link:hover {
-  color: white;
 }

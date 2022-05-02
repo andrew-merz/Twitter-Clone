@@ -17,8 +17,6 @@ app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (request, response) => response.send("Welcome to Twitter!"));
-
 app.use(
   session({
     store: MongoStore.create({
@@ -48,5 +46,9 @@ app.use(function (req, res, next) {
   res.locals.user = req.session.currentUser;
   next();
 });
+
+app.get('/', (req, res) => {
+  res.redirect('/home')
+})
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
