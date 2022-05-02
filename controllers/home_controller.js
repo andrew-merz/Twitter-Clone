@@ -49,10 +49,9 @@ router.get("/bookmarks", async (req, res, next) => {
 //   }
 // });
 
-
 router.get("/:id", async (req, res, next) => {
   try {
-    const tweet = await db.Tweet.findById(req.params.id);
+    const tweet = await db.Tweet.findById(req.params.id).populate("user");
     const currentUser = req.session.currentUser;
     const comments = tweet.comment
     //const leng = comments.length;
@@ -110,6 +109,7 @@ router.delete("/:id", async (req, res, next) => {
 //comment from here
 router.post("/:id", async (req, res, next) => {
   try {
+
     const newCommentData = req.body
     const tweet = await db.Tweet.findById(req.params.id)
     const newComment = await db.Comment.create(newCommentData)
@@ -121,6 +121,7 @@ router.post("/:id", async (req, res, next) => {
     //const comments = db.Comment.
     //console.log(tweet)
     res.redirect(`/home/${req.params.id}`)
+
 
   } catch (error) {
     console.log(error);
