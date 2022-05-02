@@ -9,6 +9,7 @@ router.get("/", async (req, res, next) => {
     const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
     const context = { tweets, currentUser };
+    console.log(tweets.likes)
     return res.render("home.ejs", context);
   } catch (error) {
     console.log(error);
