@@ -1,25 +1,25 @@
 const mongoose = require("mongoose");
-const commentSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema(
+  {
     content: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     tweet: {
-        type: mongoose.Types.ObjectId,
-        ref: "Tweet",
+      type: mongoose.Types.ObjectId,
+      ref: "Tweet",
     },
     user: {
-        type: String
-        
+      type: String,
     },
     userpic: {
-        type: String
-    }
-
-},
-{
+      type: String,
+    },
+  },
+  {
     timeStamps: true,
-})
+  }
+);
 
 const Comment = mongoose.model("Comment", commentSchema);
 

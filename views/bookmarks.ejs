@@ -2,12 +2,8 @@
 <html class="show-html" lang="en">
 <%- include('partials/head.ejs',{ pageName : "Twitter Likes" }) %>
   <%- include('./partials/nav.ejs', {page: 'nav' }) %>
-
     <body class="home-body">
       <div class="likesContent">
-        <section>
-
-        </section>
         <div class="homeMainContent">
           <div>
             <%- include('partials/sideNavBar.ejs')%>
@@ -17,7 +13,7 @@
               <div>
                 <div>
                   <div class="likes-display">
-                    <h2 class="bookmarks-title">Bookmarks</h2>
+                    <h2 class="bookmarks-title">Liked Tweets</h2>
                     <h5>@<%= currentUser.username %>
                     </h5>
                   </div>

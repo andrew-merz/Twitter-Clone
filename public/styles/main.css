@@ -25,7 +25,7 @@ body {
 }
 
 .sideNavbar a:hover {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 /* Home page styling */
@@ -80,7 +80,7 @@ body {
   display: inline-block;
   resize: none;
   overflow: hidden;
-  transition: .35s;
+  transition: 0.35s;
 }
 
 .tweet-text-container {
@@ -92,13 +92,13 @@ body {
 
 #content:focus {
   outline: none;
-  border-bottom: 2px solid #1DA1F2;
+  border-bottom: 2px solid #1da1f2;
 }
 
 .tweetButton {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   border-radius: 60px;
   color: white;
   font-size: 18px;
@@ -131,7 +131,7 @@ body {
   float: left;
   width: 20vw;
   margin-left: 24px;
-  transition: .35s;
+  transition: 0.35s;
 }
 
 .image-input::placeholder {
@@ -141,7 +141,7 @@ body {
 
 .image-input:focus {
   outline: none;
-  border-bottom: 2px solid #1DA1F2;
+  border-bottom: 2px solid #1da1f2;
 }
 
 .image-tweet-button {
@@ -190,11 +190,7 @@ body {
 }
 
 .clickable-container {
-
-  transition: 0.2s;
-
-  transition: .45s;
-
+  transition: 0.45s;
 }
 
 .clickable-container:hover {
@@ -211,57 +207,3 @@ body {
 .likes-display {
   text-align: center;
 }
-
-
-/* Styling Edit Profile page */
-.profile {
-  background-color: black;
-  display: grid;
-  grid-template-columns: 100px 600px;
-  justify-content: center;
-  height: 100vh;
-}
-
-.buttonprofile {
-  appearance: none;
-  background-color: #000000;
-  border: 2px solid rgb(70, 70, 70);
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-  min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 80%;
-  will-change: transform;
-}
-
-.buttonprofile:disabled {
-  pointer-events: none;
-}
-
-.buttonprofile:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
-}
-
-.buttonprofile:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-

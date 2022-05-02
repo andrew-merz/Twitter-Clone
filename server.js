@@ -59,4 +59,4 @@ app.get("/", (req, res) => {
   res.redirect("/auth/login");
 });
 
-//app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+

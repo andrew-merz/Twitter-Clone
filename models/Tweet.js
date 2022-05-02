@@ -33,10 +33,6 @@ const tweetSchema = new mongoose.Schema(
       type: [String],
       default:""
     }
-    // comment: {
-    //   type: [mongoose.Types.ObjectId],
-    //   ref: "Comment"
-    // }
   },
   {
     timestamps: true,

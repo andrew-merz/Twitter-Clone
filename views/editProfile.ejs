@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs',{ pageName : "Twitter home" }) %>
-    <%- include('./partials/nav.ejs', {page: 'nav' }) %>
-
-        <body class="home-body">
-
-            <div class="editProifle-body profile">
-                <div>
-                    <%- include('partials/sideNavBar.ejs')%>
-                </div>
-                <div class="profile-form">
-                    <form action="/auth/<%= id %>?_method=PUT" method="POST">
-                        <div id="profiletitle">
-                            <h1 style="font-weight: 500">Edit Profile</h1>
-                        </div>
-
-                        <div id="profile-image-username">
-                            <label for="content">
-                                <img id="profile-image-edit" class="profile-image" src="<%= currentUser.profilePic %>"
-                                    alt="Placeholder image" />
-                            </label>
-                            <p id="edit-username">
-                                @<%= currentUser.username%>
-                            </p>
-                        </div>
-
-
-                        <div class="float">
-                            <label>Username:</label>
-                            <input autocomplete="off" type="text" name="username" value="<%= currentUser.username%>" />
-                        </div>
-
-
-                        <div class="float float2">
-                            <label>Profile picture:</label>
-                            <input autocomplete="off" type="text" name="profilePic"
-                                value="<%= currentUser.profilePic%>" />
-                        </div>
-
-
-                        <div class="button-container">
-                            <input class='buttonprofile' type="submit"
-                                value="Edit Profile: <%= currentUser.username%>" />
-                        </div>
-                    </form>
-                </div>
-                <!-- <form action = "/auth/<%=id%>/deleteprofile?_method=PUT" method = "POST">
-    <input type="submit" value="Delete profile picture"/>
-
-</form> -->
-            </div>
-        </body>
-
+  <%- include('partials/head.ejs',{ pageName : "Edit Profile" }) %> <%-
+  include('./partials/nav.ejs', {page: 'nav' }) %>
+  <body class="home-body">
+    <div class="editProifle-body profile">
+      <div><%- include('partials/sideNavBar.ejs')%></div>
+      <div class="profile-form">
+        <form action="/auth/<%= id %>?_method=PUT" method="POST">
+          <div id="profiletitle">
+            <h1 style="font-weight: 500">Edit Profile</h1>
+          </div>
+          <div id="profile-image-username">
+            <label for="content">
+              <img
+                id="profile-image-edit"
+                class="profile-image"
+                src="<%= currentUser.profilePic %>"
+                alt="Placeholder image"
+              />
+            </label>
+            <p id="edit-username">@<%= currentUser.username%></p>
+          </div>
+          <div class="float">
+            <label>Username:</label>
+            <input
+              autocomplete="off"
+              type="text"
+              name="username"
+              value="<%= currentUser.username%>"
+            />
+          </div>
+          <div class="float float2">
+            <label>Profile picture:</label>
+            <input
+              autocomplete="off"
+              type="text"
+              name="profilePic"
+              value="<%= currentUser.profilePic%>"
+            />
+          </div>
+          <div class="button-container">
+            <input
+              class="buttonprofile"
+              type="submit"
+              value="Edit Profile: <%= currentUser.username%>"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
