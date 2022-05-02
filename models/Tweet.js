@@ -16,7 +16,7 @@ const tweetSchema = new mongoose.Schema(
     },
     likes: {
       type: Number,
-      likeCount: 0,
+      default: 0,
     },
     retweets: {
       type: Number,
