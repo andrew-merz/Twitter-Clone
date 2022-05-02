@@ -4,14 +4,11 @@ const router = express.Router();
 
 const db = require("../models");
 
-
-
 router.get("/", async (req, res, next) => {
   try {
     const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
     const context = { tweets, currentUser };
-    console.log(tweets.likes)
     return res.render("home.ejs", context);
   } catch (error) {
     console.log(error);
@@ -37,18 +34,18 @@ router.get("/bookmarks", async (req, res, next) => {
   }
 });
 
-router.get("/", async (req, res, next) => {
-  try {
-    const tweets = await db.Tweet.find({});
-    const currentUser = req.session.currentUser;
-    const context = { tweets, currentUser };
-    return res.render("home.ejs", context);
-  } catch (error) {
-    console.log(error);
-    req.error = error;
-    return next();
-  }
-});
+// router.get("/", async (req, res, next) => {
+//   try {
+//     const tweets = await db.Tweet.find({});
+//     const currentUser = req.session.currentUser;
+//     const context = { tweets, currentUser };
+//     return res.render("home.ejs", context);
+//   } catch (error) {
+//     console.log(error);
+//     req.error = error;
+//     return next();
+//   }
+// });
 
 
 router.get("/:id", async (req, res, next) => {
