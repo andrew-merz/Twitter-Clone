@@ -57,7 +57,7 @@ router.get("/:id", async (req, res, next) => {
     //const leng = comments.length;
 
     const context = { oneTweet: tweet, currentUser, comments };
-    console.log(tweet)
+    //console.log(tweet)
     return res.render("show.ejs", context);
   } catch (error) {
     console.log(error);
@@ -113,10 +113,13 @@ router.post("/:id", async (req, res, next) => {
     const newCommentData = req.body
     const tweet = await db.Tweet.findById(req.params.id)
     const newComment = await db.Comment.create(newCommentData)
-    
+    const currentUser = req.session.currentUser;
+    await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{user:currentUser.username}})
+    await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{userpic:currentUser.profilePic}})
+
     //console.log(newComment)
     await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$push:{comment: newComment.content}})
-
+    console.log(newComment._id)
     //await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$push:{comment: newComment}})
     //const comments = db.Comment.
     //console.log(tweet)
