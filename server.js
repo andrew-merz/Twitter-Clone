@@ -48,7 +48,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.redirect("/home");
+  res.redirect("/auth/login");
 });
 
 //app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
