@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head.ejs',{ pageName : "Twitter home" }) %>
-  <%- include('./partials/nav.ejs', {page: 'nav' }) %>
+  <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %> <%-
+  include('./partials/nav.ejs', {page: 'nav' }) %>
 
-    <body class="home-body">
-      <div class="homeMainContent anything">
-        <div>
-          <%- include('partials/sideNavBar.ejs')%>
-        </div>
-        <main class="twitter-home-container">
-          <section>
+  <body class="home-body">
+    <div class="homeMainContent anything">
+      <div><%- include('partials/sideNavBar.ejs')%></div>
+      <main class="twitter-home-container">
+        <section>
+          <div>
+            <h2 id="title">Home</h2>
+          </div>
+        </section>
+        <form method="POST" action="/home">
+          <div class="tweet-text-container">
+            <label for="content">
+              <img
+                class="profile-image"
+                src="<%= currentUser.profilePic %>"
+                alt="Placeholder image"
+              />
+            </label>
+            <textarea
+              name="content"
+              id="content"
+              placeholder="What's happening?"
+              onkeyup="autoAdjustTextArea(this);"
+            ></textarea>
+            <input
+              name="user"
+              id="user"
+              type="hidden"
+              value="<%=currentUser.id%>"
+            />
+          </div>
+          <div class="image-tweet-button">
+            <input
+              autocomplete="off"
+              class="image-input"
+              type="text"
+              name="image"
+              placeholder="image.png"
+            />
+            <input type="submit" value="Tweet" class="tweetButton" />
+          </div>
+        </form>
+        <main class="container">
+          <div>
             <div>
+
+              <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const
+              tweet=tweets[idx] %>
+              <div class="tweetPic-user">
+                <img class="profile-image" src="<%=tweet.user.profilePic%>" />
+                <p class="username">@<%=tweet.user.username%></p>
+                <span> | </span>
+                <small>
+                  <%= new Date(tweet.createdAt).toLocaleString() %>
+                </small>
               <h2 id="title">Home</h2>
             </div>
           </section>
@@ -74,32 +121,56 @@
                       </div>
                     </div>
                     <% } %>
+
               </div>
+              <p class="tweet-text"><%= tweet.content %></p>
+              <div class="image-container">
+                <% if(tweet.image !=='' ){%>
+                <img class="card-image" src="<%=tweet.image%>" />
+                <%}%>
+              </div>
+              <div class="like-retweet-buttons">
+                <div>
+                  <button class="comment-button openModal">
+                    <i class="fa-solid fa-comment"></i>
+                  </button>
+                </div>
+                <div class="like-container">
+                  <button class="like">♡</button>
+                  <span class="number-likes"> <%= tweet.likes %> </span>
+                </div>
+                <div class="retweet-container">
+                  <button class="retweet">
+                    <i class="fa-solid fa-retweet"></i>
+                  </button>
+                  <span class="number-retweets"> <%= tweet.retweets %> </span>
+                </div>
+              </div>
+              <% } %>
             </div>
-          </main>
+          </div>
         </main>
-      </div>
-      <script>
-        // const like = document.querySelector('.like');
-        // const numberLike = document.querySelector('.number-likes');
-        // function myFunction() {
-        //   tweet.likes += 1;
-        //   numberLike.innerText += 1;
-        // }
+      </main>
+    </div>
+    <script>
+      // const like = document.querySelector('.like');
+      // const numberLike = document.querySelector('.number-likes');
+      // function myFunction() {
+      //   tweet.likes += 1;
+      //   numberLike.innerText += 1;
+      // }
 
-
-        // This is to make text areas adjust automatically
-        function autoAdjustTextArea(o) {
-          o.style.height = "1px"; // Prevent height from growing when deleting lines.
-          o.style.height = o.scrollHeight + "px";
-        }
-        // Get a reference to the text area.
-        var txtArea = document.getElementsByClassName("noscrollbars")[0];
-        // Generate some random characters of length between 150 and 300.
-        txtArea.value = randChars(chars, randRange(150, 300));
-        // Trigger the event.
-        autoAdjustTextArea(txtArea);
-      </script>
-    </body>
-
+      // This is to make text areas adjust automatically
+      function autoAdjustTextArea(o) {
+        o.style.height = "1px"; // Prevent height from growing when deleting lines.
+        o.style.height = o.scrollHeight + "px";
+      }
+      // Get a reference to the text area.
+      var txtArea = document.getElementsByClassName("noscrollbars")[0];
+      // Generate some random characters of length between 150 and 300.
+      txtArea.value = randChars(chars, randRange(150, 300));
+      // Trigger the event.
+      autoAdjustTextArea(txtArea);
+    </script>
+  </body>
 </html>

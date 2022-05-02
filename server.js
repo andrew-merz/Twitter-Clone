@@ -28,7 +28,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 1000 * 60 * 120, // two hours
+      maxAge: 1000 * 60 * 60 * 24, // one day
     },
   })
 );
