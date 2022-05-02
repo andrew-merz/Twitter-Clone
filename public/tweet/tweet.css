@@ -11,7 +11,7 @@ body {
 
 .tweet-container {
     width: 600px;
-    padding: 0 15px 0 15px;
+    /* padding: 0 15px 0 15px; */
     border-left: 1px solid rgb(70, 70, 70);
     border-right: 1px solid rgb(70, 70, 70);
 }
@@ -32,14 +32,6 @@ body {
 }
 
 .like-retweet-buttons {
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(70, 70, 70);
-    border-top: 1px solid rgb(70, 70, 70);
-}
-
-.home-like-retweet-buttons {
     margin-top: 8px;
     display: flex;
     justify-content: space-around;
@@ -146,5 +138,70 @@ body {
     display: flex;
     border-bottom: 1px solid rgb(70, 70, 70);
     margin-bottom: 15px;
-  }
+}
 
+.commentarea {
+    color: white;
+    font-size: 17px;
+    display: flex;
+    /* border-bottom: 1px solid rgb(70, 70, 70); */
+    vertical-align: middle;
+}
+  
+.commentarea p {
+    margin: 10px 0 10px 0;
+}
+  
+.commentButton {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    background-color: #1DA1F2;
+    border-radius: 60px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 6px 20px 6px 20px;
+    border: none;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+  
+.commentButton:hover {
+    cursor: pointer;
+    background-color: #00abeebe;
+}
+  
+.comment-button-container {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(70, 70, 70);
+}
+  
+#show-content {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 450px;
+    font-size: 26px;
+    padding: 20px 2px 20px 0;
+    display: inline-block;
+    resize: none;
+    overflow: hidden;
+    transition: .35s;
+}
+  
+#show-content:focus {
+    outline: none;
+    border-bottom: 2px solid #1DA1F2;
+}
+  
+.show-tweet-text-container {
+    display: flex;
+    border: none;
+    border-bottom: 1px solid rgb(70, 70, 70);
+    padding: 10px 0 10px 0;
+}

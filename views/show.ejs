@@ -8,96 +8,84 @@
         <div>
           <%- include('partials/sideNavBar.ejs')%>
         </div>
-       <body class="home-body">
-        <div class="tweet-container">
-          
-          <div class="tweetPic-user">
-            <img class="profile-image" src="<%=oneTweet.user.profilePic%>" />
-            <p class="username">
-              @<%=oneTweet.user.username%>
+
+        <body class="home-body">
+          <div class="tweet-container">
+
+            <div class="tweetPic-user">
+              <img class="profile-image" src="<%=oneTweet.user.profilePic%>" />
+              <p class="username">
+                @<%=oneTweet.user.username%>
+              </p>
+              <span> | </span>
+              <small>
+                <%= new Date(oneTweet.createdAt).toLocaleString() %>
+              </small>
+            </div>
+            <p class="tweet-text">
+              <%= oneTweet.content %>
             </p>
-            <span> | </span>
-            <small>
-              <%= new Date(oneTweet.createdAt).toLocaleString() %>
-            </small>
-          </div>
-          <p class="tweet-text">
-            <%= oneTweet.content %>
-          </p>
-          <div class="image-container">
-            <% if(oneTweet.image !=='' ){%>
-              <img class="card-image" src="<%=oneTweet.image%>" />
+            <div class="image-container">
+              <% if(oneTweet.image !=='' ){%>
+                <img class="card-image" src="<%=oneTweet.image%>" />
+                <%}%>
+            </div>
+
+
+            <div class="like-retweet-buttons">
+              <div>
+                <button class="comment-button"><i class="fa-solid fa-comment"></i></button>
+              </div>
+              <% oneTweet.likes=0 %>
+                <div class="like-container">
+                  <button class="like">♡</button>
+                  <span class="number-likes">
+                    <%= oneTweet.likes %>
+                  </span>
+                </div>
+                <div class="retweet-container">
+                  <button class="retweet"><i class="fa-solid fa-retweet"></i></button>
+                  <span class="number-retweets">
+                    <%= oneTweet.retweets %>
+                  </span>
+                </div>
+
+            </div>
+
+            <form method="POST" action="/home/<%=oneTweet._id%>">
+              <div class="show-tweet-text-container">
+                <label for="content">
+                  <img class="profile-image" src="<%=currentUser.profilePic%>" />
+                </label>
+                <textarea name="content" id="show-content" placeholder="Tweet your comment"></textarea>
+              </div>
+              <div class="comment-button-container">
+                <input type="submit" value="Comment" class="commentButton" />
+              </div>
+            </form>
+            <% for (let i=0; i< comments.length; i++) { %>
+              <div class="commentarea">
+                <p>
+                  <%= comments[i] %>
+                </p>
+              </div>
               <%}%>
           </div>
-       
-          
-          <div class="like-retweet-buttons">
-            <div>
-              <button class="comment-button"><i class="fa-solid fa-comment"></i></button>
-            </div>
-            <% oneTweet.likes=0 %>
-              <div class="like-container">
-                <button class="like">♡</button>
-                <span class="number-likes">
-                  <%= oneTweet.likes %>
-                </span>
-              </div>
-              <div class="retweet-container">
-                <button class="retweet"><i class="fa-solid fa-retweet"></i></button>
-                <span class="number-retweets">
-                  <%= oneTweet.retweets %>
-                </span>
-              </div>
-              
           </div>
-         
-          <form method="POST" action="/home/<%=oneTweet._id%>">
-            <div class="tweet-text-container">
-              <label for="content">
-                <textarea name="content" id="content" placeholder="comments"onkeyup="autoAdjustTextArea(this);"></textarea>
-              </label>
-            </div>
-            <input type="submit" value="Comment" class="commentButton" />
-          </form>
-          <div class="commentarea">
-
-            <% for (let i = 0; i< comments.length; i++) { %>
-
-            <%= comments[i] %>
-
-              <%}%>
-          </div>
-        </div>
-
-
-
-
-
-        </div>
 
       </section>
       <script>
-        // This is to make text areas adjust automatically
-        function autoAdjustTextArea(o) {
-          o.style.height = "1px"; // Prevent height from growing when deleting lines.
-          o.style.height = o.scrollHeight + "px";
+        // Function to make textarea automatically adjust when user is typing
+        const text = document.getElementsByTagName("textarea");
+        for (let i = 0; i < text.length; i++) {
+          text[i].setAttribute("style", "height:" + (text[i].scrollHeight) + "px;overflow-y:hidden;");
+          text[i].addEventListener("input", OnInput, false);
         }
-        // Get a reference to the text area.
-        var txtArea = document.getElementsByClassName("noscrollbars")[0];
-        // Generate some random characters of length between 150 and 300.
-        txtArea.value = randChars(chars, randRange(150, 300));
-        // Trigger the event.
-        autoAdjustTextArea(txtArea);
 
-        const likeButton = document.querySelector('.like')
-        const retweetButton = document.querySelector('.retweet')
-        const tweetLikes = document.querySelector('.number-likes')
-        const tweetRetweets = document.querySelector('.number-retweets')
-
-        likeButton.addEventListener('click', () => {
-          oneTweet.likes += 1;
-          tweetLikes.innerHTML = `${oneTweet.likes += 1}`
-        })
+        function OnInput() {
+          this.style.height = "auto";
+          this.style.height = (this.scrollHeight) + "px";
+        }
       </script>
     </body>
 
