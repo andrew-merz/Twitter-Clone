@@ -3,12 +3,14 @@ const express = require("express");
 const router = express.Router();
 
 const db = require("../models");
+const { findById } = require("../models/Tweet");
 
 router.get("/", async (req, res, next) => {
   try {
     const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
     const context = { tweets, currentUser };
+    
     return res.render("home.ejs", context);
   } catch (error) {
     console.log(error);
@@ -51,7 +53,11 @@ router.get("/:id", async (req, res, next) => {
   try {
     const tweet = await db.Tweet.findById(req.params.id).populate("user");
     const currentUser = req.session.currentUser;
-    const context = { oneTweet: tweet, currentUser };
+    const comments = tweet.comment
+    //const leng = comments.length;
+
+    const context = { oneTweet: tweet, currentUser, comments };
+    console.log(tweet)
     return res.render("show.ejs", context);
   } catch (error) {
     console.log(error);
@@ -101,10 +107,22 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 //comment from here
-router.put("/:id", async (req, res, next) => {
+router.post("/:id", async (req, res, next) => {
   try {
-    const newCommentData = req.body;
-    const newComment = await db.Comment.create(newCommentData);
+
+    const newCommentData = req.body
+    const tweet = await db.Tweet.findById(req.params.id)
+    const newComment = await db.Comment.create(newCommentData)
+    
+    //console.log(newComment)
+    await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$push:{comment: newComment.content}})
+
+    //await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$push:{comment: newComment}})
+    //const comments = db.Comment.
+    //console.log(tweet)
+    res.redirect(`/home/${req.params.id}`)
+
+
   } catch (error) {
     console.log(error);
     req.error = error;

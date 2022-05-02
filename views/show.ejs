@@ -57,9 +57,24 @@
                 <textarea name="content" id="content" placeholder="comments"onkeyup="autoAdjustTextArea(this);"></textarea>
               </label>
             </div>
+            <input type="submit" value="Comment" class="commentButton" />
           </form>
+          <div class="commentarea">
+
+            <% for (let i = 0; i< comments.length; i++) { %>
+
+            <%= comments[i] %>
+
+              <%}%>
+          </div>
         </div>
-      </div>
+
+
+
+
+
+        </div>
+
       </section>
       <script>
         // This is to make text areas adjust automatically
