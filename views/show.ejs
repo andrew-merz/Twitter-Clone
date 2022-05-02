@@ -68,7 +68,17 @@
             <% for (let i=0; i< comments.length; i++) { %>
               <div class="commentarea">
                 <p>
+                 
+                  <label for="content">
+                    
+                    <% const commentimg = commentpicture[i] %>
+                   <img class="profile-image" src="<%=commentimg%>" />
+                   
+                  </label>
+                  <%= commentusername[i] %> 
+                  
                   <%= comments[i] %>
+                  
                 </p>
               </div>
               <%}%>

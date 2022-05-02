@@ -54,9 +54,11 @@ router.get("/:id", async (req, res, next) => {
     const tweet = await db.Tweet.findById(req.params.id).populate("user");
     const currentUser = req.session.currentUser;
     const comments = tweet.comment
+    const commentusername = tweet.commentusername
+    const commentpicture = tweet.commentpicture
     //const leng = comments.length;
 
-    const context = { oneTweet: tweet, currentUser, comments };
+    const context = { oneTweet: tweet, currentUser, comments, commentpicture, commentusername };
     //console.log(tweet)
     return res.render("show.ejs", context);
   } catch (error) {
@@ -114,8 +116,10 @@ router.post("/:id", async (req, res, next) => {
     const tweet = await db.Tweet.findById(req.params.id)
     const newComment = await db.Comment.create(newCommentData)
     const currentUser = req.session.currentUser;
-    await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{user:currentUser.username}})
-    await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{userpic:currentUser.profilePic}})
+    // await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{user:currentUser.username}})
+    // await db.Comment.findOneAndUpdate({_id:newComment._id}, {$set:{userpic:currentUser.profilePic}})
+    await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$set:{commentusername: currentUser.username}})
+    await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$set:{commentpicture: currentUser.profilePic}})
 
     //console.log(newComment)
     await db.Tweet.findOneAndUpdate({_id:req.params.id}, {$push:{comment: newComment.content}})
