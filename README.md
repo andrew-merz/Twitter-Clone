@@ -15,8 +15,9 @@ Click on this link to launch the application:
 1. You will be prompted to log in with your account
 
    - If you dont have an account, click register to create an account with an email, username, and password
+   - your email will be safely stored in a databas and your password will be encrypted
 
-2. Once you are logged in you will see the main twitter feed with all of the other users previous tweets
+2. Once you are logged in you will see the main twitter feed with all of the other users tweets
 
 3. Users can scroll down and explore what people are saying
 
@@ -30,4 +31,14 @@ Click on this link to launch the application:
 
 7. From the home page, Users can click on the profile button to display their own profile and edit the username and/or profile picture.
 
-8. Once you are done using Twitter-Clone, click logout and your session will end
+8. Once you are done using Twitter-Clone, click logout in the upper right corner and your session will end
+
+Next Steps / IceBox Items:
+
+1. Implement an option for users to like tweets and store them in a liked section of the app
+
+2. Allow users to delete tweets, and delete their profile from the client-side
+
+3. Allow users to retweet tweets and display them at the top of the page.
+
+4. Connect the twitter API to recieve live tweets in real-time
