@@ -28,19 +28,35 @@
               <input type="submit" value="Tweet" class="tweetButton" />
             </div>
           </form>
-          <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const tweet=tweets[idx] %>
-              <main class="container">
-                <a class="container-link" href="/home/<%= tweet._id %> ">
-                  <div>
-                    <div>
-                      <div class="tweetPic-user">
-                        <img class="profile-image" src="<%=tweet.user.profilePic%>" />
-                        <p class="username">@<%=tweet.user.username%>
-                        </p>
-                        <span> | </span>
-                        <small>
-                          <%= new Date(tweet.createdAt).toLocaleString() %>
-                        </small>
+          <main class="container">
+            <div>
+              <div>
+                <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const tweet=tweets[idx] %>
+                    <div class="tweetPic-user">
+                      <img class="profile-image" src="<%=tweet.user.profilePic%>" />
+                      <p class="username">@<%=tweet.user.username%>
+                      </p>
+                      <span> | </span>
+                      <small>
+                        <%= new Date(tweet.createdAt).toLocaleString() %>
+                      </small>
+                    </div>
+                    <p class="tweet-text">
+                      
+                      <a href="/home/<%=tweet._id%>" style="color:white"><%= tweet.content %></a>
+                    </p>
+                    <div class="image-container">
+                      <% if(tweet.image !=='' ){%>
+                        <a href="/home/<%=tweet._id%>"><img class="card-image" src="<%=tweet.image%>" /></a>
+                        <%}%>
+                    </div>
+                    <div class="like-retweet-buttons">
+                      <div>
+                        <button class="comment-button openModal">
+                          <!-- <a href="/home/<%=tweet._id%>"></a> -->
+                          <i class="fa-solid fa-comment"></i>
+                          
+                        </button>
                       </div>
                       <p class="tweet-text">
                         <%= tweet.content %>

@@ -27,6 +27,7 @@
             <img class="tweet-image" src="<%= oneTweet.image %>" alt="" />
             <% } %> 
           </div>
+          
           <div class="like-retweet-buttons">
             <div>
               <button class="comment-button"><i class="fa-solid fa-comment"></i></button>
@@ -44,6 +45,7 @@
                   <%= oneTweet.retweets %>
                 </span>
               </div>
+              
           </div>
           <!-- <form method="POST" action="/home/<%= oneTweet._id %>">
             <p class="replying-to">Replying to @<%= %>
@@ -60,6 +62,13 @@
               <input type="submit" value="Reply" class="tweetButton" />
             </div>
           </form> -->
+          <form method="POST" action="/home/<%=oneTweet._id%>">
+            <div class="tweet-text-container">
+              <label for="content">
+                <textarea name="content" id="content" placeholder="comments"onkeyup="autoAdjustTextArea(this);"></textarea>
+              </label>
+            </div>
+          </form>
         </div>
         </div>
       </section>
