@@ -12,30 +12,33 @@
                 <div class="profile-form">
                     <form action="/auth/<%= id %>?_method=PUT" method="POST">
                         <div id="profiletitle">
-                            <h1>Edit Profile</h1>
+                            <h1 style="font-weight: 500">Edit Profile</h1>
                         </div>
-                        
+
                         <div id="profile-image-username">
                             <label for="content">
-                                <img class="profile-image" src="<%= currentUser.profilePic %>"
+                                <img id="profile-image-edit" class="profile-image" src="<%= currentUser.profilePic %>"
                                     alt="Placeholder image" />
                             </label>
-                            @<%= currentUser.username%>
+                            <p id="edit-username">
+                                @<%= currentUser.username%>
+                            </p>
                         </div>
-                        
-                        
+
+
                         <div class="float">
                             <label>Username:</label>
                             <input autocomplete="off" type="text" name="username" value="<%= currentUser.username%>" />
                         </div>
 
-                        
-                        <div class="float">
+
+                        <div class="float float2">
                             <label>Profile picture:</label>
-                            <input autocomplete="off" type="text" name="profilePic" value="<%= currentUser.profilePic%>" />
+                            <input autocomplete="off" type="text" name="profilePic"
+                                value="<%= currentUser.profilePic%>" />
                         </div>
 
-                        
+
                         <div class="button-container">
                             <input class='buttonprofile' type="submit"
                                 value="Edit Profile: <%= currentUser.username%>" />

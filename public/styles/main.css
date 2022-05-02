@@ -20,13 +20,12 @@ body {
 .sideNavbar a {
   color: white;
   padding: 15px;
-  transition: 0.3s;
+  transition: 0.35s;
   border-radius: 50%;
 }
 
 .sideNavbar a:hover {
-  color: white;
-  background-color: rgb(37, 37, 37);
+  color: #00acee;
 }
 
 /* Home page styling */
@@ -46,16 +45,6 @@ body {
 
 .tweeterLogo {
   margin-top: 15px;
-}
-
-.tweetIcon img {
-  height: 60px;
-  width: 60px;
-  border-radius: 29px;
-}
-
-.tweetIcon a:hover {
-  background: none;
 }
 
 .homeMainContent {
@@ -195,11 +184,15 @@ body {
 }
 
 .clickable-container {
+
   transition: 0.2s;
+
+  transition: .45s;
+
 }
 
 .clickable-container:hover {
-  background-color: rgba(39, 39, 39, 0.15);
+  background-color: rgba(43, 43, 43, 0.65);
 }
 
 /* Styling bookmarks page */
@@ -212,6 +205,7 @@ body {
 .likes-display {
   text-align: center;
 }
+
 
 /* Styling Edit Profile page */
 .profile {
@@ -264,3 +258,5 @@ body {
   box-shadow: none;
   transform: translateY(0);
 }
+
+
