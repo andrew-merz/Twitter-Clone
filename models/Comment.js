@@ -9,8 +9,11 @@ const commentSchema = new mongoose.Schema({
         ref: "Tweet",
     },
     user: {
-        type: mongoose.Types.ObjectId,
-        ref: "User"
+        type: String
+        
+    },
+    userpic: {
+        type: String
     }
 
 },
