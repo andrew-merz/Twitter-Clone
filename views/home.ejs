@@ -48,6 +48,7 @@
         <main class="container">
           <div>
             <div>
+
               <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const
               tweet=tweets[idx] %>
               <div class="tweetPic-user">
@@ -57,6 +58,70 @@
                 <small>
                   <%= new Date(tweet.createdAt).toLocaleString() %>
                 </small>
+              <h2 id="title">Home</h2>
+            </div>
+          </section>
+          <form method="POST" action="/home">
+            <div class="tweet-text-container">
+              <label for="content">
+                <img class="profile-image" src="<%= currentUser.profilePic %>" alt="Placeholder image" />
+              </label>
+              <textarea name="content" id="content" placeholder="What's happening?"
+                onkeyup="autoAdjustTextArea(this);"></textarea>
+              <input name="user" id="user" type="hidden" value="<%=currentUser.id%>" />
+            </div>
+            <div class="image-tweet-button">
+              <input autocomplete="off" class="image-input" type="text" name="image" placeholder="image.png" />
+              <input type="submit" value="Tweet" class="tweetButton" />
+            </div>
+          </form>
+          <main class="container">
+            <div>
+              <div>
+                <% for(let idx=tweets.length -1; idx>= 0; idx--){ %> <% const tweet=tweets[idx] %>
+                    <div class="tweetPic-user">
+                      <img class="profile-image" src="<%=tweet.user.profilePic%>" />
+                      <p class="username">@<%=tweet.user.username%>
+                      </p>
+                      <span> | </span>
+                      <small>
+                        <%= new Date(tweet.createdAt).toLocaleString() %>
+                      </small>
+                    </div>
+                    <p class="tweet-text">
+
+                      <a href="/home/<%=tweet._id%>" style="color:white">
+                        <%= tweet.content %>
+                      </a>
+                    </p>
+                    <div class="image-container">
+                      <% if(tweet.image !=='' ){%>
+                        <a href="/home/<%=tweet._id%>"><img class="card-image" src="<%=tweet.image%>" /></a>
+                        <%}%>
+                    </div>
+                    <div class="like-retweet-buttons">
+                      <div>
+                        <button class="comment-button openModal">
+                          <i class="fa-solid fa-comment"></i>
+                        </button>
+                      </div>
+                      <div class="like-container">
+                          <button class="like">♡</button>
+                          <span class="number-likes">
+                            <%= tweet.likes %>
+                          </span>
+                      </div>
+                      <div class="retweet-container">
+                        <button class="retweet">
+                          <i class="fa-solid fa-retweet"></i>
+                        </button>
+                        <span class="number-retweets">
+                          <%= tweet.retweets %>
+                        </span>
+                      </div>
+                    </div>
+                    <% } %>
+
               </div>
               <p class="tweet-text"><%= tweet.content %></p>
               <div class="image-container">
