@@ -76,7 +76,7 @@
 .text {
     background-color: black;
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -98,4 +98,14 @@
     /* border: 2px solid black; */
     background-color: #007fce;
     color: whitesmoke;
+}
+
+.control button:active {
+    background-color: #0076c0;
+    color: whitesmoke;
+}
+
+#input:focus {
+    outline: none;
+    border-color: #1DA1F2;
 }
