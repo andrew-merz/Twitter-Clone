@@ -48,33 +48,6 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//const foundUser = await User.findOne({ email: req.body.email });
-
-// router.get('/editprofile', async (req, res, next) => {
-//     try {
-//         const currentUser = await req.session.currentUser
-//         const context = {currentUser}
-//         return res.render('editProfile.ejs', context)
-
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// })
-
-// router.get("/:id/editprofile", async (req, res, next) => {
-//   try {
-//     const updatedUser = await db.User.findById(req.params.id);
-//     console.log(updatedUser);
-//     const context = { currentUser: updatedUser, id: req.params.id };
-//     return res.render("editProfile.ejs", context);
-//   } catch (error) {
-//     console.log(error);
-//     req.error = error;
-//     return next();
-//   }
-// });
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -122,6 +95,18 @@ router.delete("/:id", async (req, res, next) => {
     const deletedTweet = await db.Tweet.findByIdAndDelete(req.params.id);
     console.log(deletedTweet);
     return res.redirect("/home");
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
+//comment from here
+router.put("/:id", async (req, res, next) => {
+  try {
+    const newCommentData = req.body
+    const newComment = await db.Comment.create(newCommentData)
   } catch (error) {
     console.log(error);
     req.error = error;

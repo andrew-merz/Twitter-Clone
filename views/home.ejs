@@ -42,17 +42,20 @@
                       </small>
                     </div>
                     <p class="tweet-text">
-                      <%= tweet.content %>
+                      
+                      <a href="/home/<%=tweet._id%>" style="color:white"><%= tweet.content %></a>
                     </p>
                     <div class="image-container">
                       <% if(tweet.image !=='' ){%>
-                        <img class="card-image" src="<%=tweet.image%>" />
+                        <a href="/home/<%=tweet._id%>"><img class="card-image" src="<%=tweet.image%>" /></a>
                         <%}%>
                     </div>
                     <div class="like-retweet-buttons">
                       <div>
                         <button class="comment-button openModal">
+                          <!-- <a href="/home/<%=tweet._id%>"></a> -->
                           <i class="fa-solid fa-comment"></i>
+                          
                         </button>
                       </div>
                       <div class="like-container">
