@@ -1,5 +1,33 @@
-Welcome to our Twitter Clone!
+Welcome to Twitter-Clone!
 
 Twitter-Clone:
 
-Twitter-Clone is a social media platform where users can post tweets that other site-members can view and interact with. The users information is stored in a database and their password will be encrypted.
+Twitter-Clone is a back-end based project aimed at reverse-engineering the popular social media platform "Twitter" and some of its features. Users can create a profile, log into that profile and start using our platform! Users can also post tweets that other site-members can view and interact with.
+
+Screenshots:
+
+Technologies Used: Mongoose | MongoDB | Express | Ejs | NodeJS | CSS
+
+Getting Started:
+
+Click on this link to launch the application:
+
+1. You will be prompted to log in with your account
+
+   - If you dont have an account, click register to create an account with an email, username, and password
+
+2. Once you are logged in you will see the main twitter feed with all of the other users previous tweets
+
+3. Users can scroll down and explore what people are saying
+
+4. Users can also post tweets to the feed by typing into the main text box at the top of the page and clicking the blue 'tweet' button
+
+   -Users can also add images to their tweets below the text box
+
+5. From the home page, Users can click directly on a tweet to display it and comment on it.
+
+6. To return to the home page, click the home button on the side-bar
+
+7. From the home page, Users can click on the profile button to display their own profile and edit the username and/or profile picture.
+
+8. Once you are done using Twitter-Clone, click logout and your session will end
