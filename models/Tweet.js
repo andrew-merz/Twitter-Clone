@@ -21,6 +21,14 @@ const tweetSchema = new mongoose.Schema(
     retweets: {
       type: Number,
     },
+    comment: {
+      type: [String],
+      default:""
+    }
+    // comment: {
+    //   type: [mongoose.Types.ObjectId],
+    //   ref: "Comment"
+    // }
   },
   {
     timestamps: true,
