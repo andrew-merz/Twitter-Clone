@@ -24,6 +24,14 @@ const tweetSchema = new mongoose.Schema(
     comment: {
       type: [String],
       default:""
+    },
+    commentusername: {
+      type: [String],
+      default:""
+    },
+    commentpicture: {
+      type: [String],
+      default:""
     }
   },
   {
