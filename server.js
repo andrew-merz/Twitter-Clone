@@ -5,7 +5,7 @@ const app = express();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const navLinks = require("./navLinks");
-const PORT = 3000;
+app.listen(process.env.PORT);
 
 require("./config/db.connection");
 
@@ -47,8 +47,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.redirect('/home')
-})
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
