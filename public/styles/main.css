@@ -25,7 +25,7 @@ body {
 }
 
 .sideNavbar a:hover {
-  color: #00acee;
+  color: #1DA1F2;
 }
 
 /* Home page styling */
@@ -68,17 +68,19 @@ body {
 }
 
 #content {
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   color: white;
   background-color: black;
   border: none;
+  border-bottom: 2px solid black;
   width: 450px;
   font-size: 26px;
   padding: 20px 2px 20px 0;
   display: inline-block;
   resize: none;
-  height: 70px;
   overflow: hidden;
+  transition: .35s;
 }
 
 .tweet-text-container {
@@ -90,12 +92,13 @@ body {
 
 #content:focus {
   outline: none;
+  border-bottom: 2px solid #1DA1F2;
 }
 
 .tweetButton {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  background-color: #00acee;
+  background-color: #1DA1F2;
   border-radius: 60px;
   color: white;
   font-size: 18px;
@@ -121,12 +124,14 @@ body {
 .image-input {
   background-color: black;
   border: none;
+  border-bottom: 2px solid black;
   color: white;
   font-size: 16px;
   margin-right: auto;
   float: left;
-  width: 50vw;
+  width: 20vw;
   margin-left: 24px;
+  transition: .35s;
 }
 
 .image-input::placeholder {
@@ -136,6 +141,7 @@ body {
 
 .image-input:focus {
   outline: none;
+  border-bottom: 2px solid #1DA1F2;
 }
 
 .image-tweet-button {
