@@ -39,7 +39,14 @@ let sessionLog = (req, res, next) => {
 
 app.use(sessionLog);
 
-app.use("/home", controllers.home);
+const authRequired = function (req, res, next) {
+  if (req.session.currentUser) {
+    return next();
+  }
+  return res.redirect("/");
+};
+
+app.use("/home", authRequired, controllers.home);
 app.use("/auth", controllers.auth);
 app.use(navLinks);
 
