@@ -6,6 +6,24 @@
     font-family: "Roboto", sans-serif;
     margin-top: 0;
     padding-top: 0;
+    background-color: black;
+}
+
+.profile {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 100px 600px;
+    justify-content: center;
+    height: 100vh;
+}
+
+#profile-image-edit {
+    height: 65px;
+    width: 65px;
+}
+
+#edit-username {
+    font-size: 22px;
 }
 
 .profile-form {
@@ -19,7 +37,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 0;
+    padding: 18px 0 18px 0;
     margin: 0;
 }
 
@@ -27,14 +45,20 @@
     float: left;
     margin-right: auto;
     padding: 0;
+    margin-left: 30px;
+    font-weight: 500;
 }
 
 .profile-form .float input {
-    border: 2px solid rgba(245, 245, 245, 0.973);
-    background-color: rgba(245, 245, 245, 0.973);
+    border: none;
+    border-bottom: 2px solid rgb(70, 70, 70);
+    background: transparent;
+    color: white;
     width: 200px;
     height: 30px;
     font-size: 17px;
+    transition: .3s;
+    margin-right: 30px;
 }
 
 .profile-form .float input:focus {
@@ -43,29 +67,75 @@
 }
 
 #profiletitle {
-    font-size: 32px;
-    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
     display: flex;
     justify-content: center;
-    font-family: "Roboto", sans-serif;
 }
 
 #profile-image-username {
     display: flex;
     align-items: center;
+    font-weight: 500;
     justify-content: center;
-    margin: 0;
+    vertical-align: middle;
+    margin: 20px 0 0 0;
     padding: 0;
     border-bottom: rgb(70, 70, 70);
 }
 
 #profile-image-username label {
+    display: flex;
+    align-items: center;
     margin-right: 30px;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
+}
+  
+.buttonprofile {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid rgb(70, 70, 70);
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .4s cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 60%;
+    will-change: transform;
+}
+  
+.buttonprofile:disabled {
+    pointer-events: none;
+}
+  
+.buttonprofile:hover {
+    border-color: #1DA1F2;
+    transform: translateY(-4px);
+}
+  
+.buttonprofile:active {
+    box-shadow: none;
+    transform: translateY(0);
 }
 
 /* Styling login and register page */
