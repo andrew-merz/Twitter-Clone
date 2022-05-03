@@ -7,7 +7,8 @@ router.get("/", async (req, res, next) => {
   try {
     const tweets = await db.Tweet.find({}).populate("user");
     const currentUser = req.session.currentUser;
-    const context = { tweets, currentUser };
+    const id = req.params.id;
+    const context = { tweets, currentUser, id };
     return res.render("home.ejs", context);
   } catch (error) {
     console.log(error);
@@ -38,12 +39,14 @@ router.get("/:id", async (req, res, next) => {
     const comments = tweet.comment;
     const commentusername = tweet.commentusername;
     const commentpicture = tweet.commentpicture;
+    const id = req.params.id;
     const context = {
       oneTweet: tweet,
       currentUser,
       comments,
       commentpicture,
       commentusername,
+      id
     };
     return res.render("show.ejs", context);
   } catch (error) {
@@ -110,9 +113,9 @@ router.post("/:id", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    const deletedTweets = await db.Tweet.findbyIdAndDelete(req.params.id)
+    const deletedTweets = await db.Tweet.findByIdAndDelete(req.params.id)
     console.log(deletedTweets);
-    return res.redirect("./logout");
+    return res.redirect("/home");
   } catch (error) {
     console.log(error);
     req.error = error;

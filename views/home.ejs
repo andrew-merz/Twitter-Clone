@@ -2,6 +2,7 @@
 <html lang="en">
 <%- include('partials/head.ejs',{ pageName : "Twitter home" }) %>
   <%- include('./partials/nav.ejs', {page: 'nav' }) %>
+
     <body class="home-body">
       <div class="homeMainContent anything">
         <div>
@@ -69,6 +70,7 @@
                         </div>
                       </div>
                     </section>
+                    
                     <% } %>
               </div>
             </div>
@@ -77,19 +79,16 @@
       </main>
       </div>
       <script>
-
         // Function to make textarea automatically adjust when user is typing
         const text = document.getElementsByTagName("textarea");
         for (let i = 0; i < text.length; i++) {
           text[i].setAttribute("style", "height:" + (text[i].scrollHeight) + "px;overflow-y:hidden;");
           text[i].addEventListener("input", OnInput, false);
         }
-
         function OnInput() {
           this.style.height = "auto";
           this.style.height = (this.scrollHeight) + "px";
         }
-
       </script>
     </body>
 

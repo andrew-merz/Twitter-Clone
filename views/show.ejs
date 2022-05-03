@@ -64,6 +64,9 @@
                 </p>
               </div>
               <%}%>
+              <form action="/home/<%= id %>?_method=DELETE" method="POST">
+                <input class="button is-danger" type="submit" value="	Delete Tweet" />
+              </form>
           </div>
           </div>
       </section>
