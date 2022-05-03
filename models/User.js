@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
   profilePic: {
     type: String,
     default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdpRvftRBgfCbvzOHB0bANVih3QvZD-xZ4flbABUFGDctmaY87ajkJD5RhdvVcyZvkS7U&usqp=CAU'
+  },
+  tweets: {
+    type: mongoose.Types.ObjectId,
+    ref: "Tweet",
   }
 });
 

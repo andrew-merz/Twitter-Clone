@@ -1,12 +1,12 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: black;
+  height: 100%;
 }
 
 .show-html {
   font-family: "Roboto", sans-serif;
   background-color: black;
-  height: 100%;
 }
 
 .show-page {
