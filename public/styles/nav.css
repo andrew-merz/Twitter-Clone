@@ -2,14 +2,6 @@
   background-color: rgb(0, 0, 0);
   border-bottom: 10px solid rgba(255, 255, 255, 0.945);
   padding-bottom: 0;
-}
-
-.nav-names {
-  color: whitesmoke;
-}
-
-.navbar div {
-  background-color: black;
   margin: 0 0 5px 0;
   font-size: 17px;
   display: flex;
@@ -17,15 +9,19 @@
   text-align: center;
   align-items: center;
   width: 100vw;
-  height: auto;
+  height: 100%;
   font-weight: 500;
 }
 
-.navbar div a {
+.nav-names {
+  color: whitesmoke;
+}
+
+.navbar a {
   transition: .35s;
 }
 
-.navbar div a:hover {
+.navbar a:hover {
   color: #1DA1F2;
 }
 

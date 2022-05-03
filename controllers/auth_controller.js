@@ -83,4 +83,16 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const deletedUser = await db.User.findByIdAndDelete(req.params.id);
+    console.log(deletedUser);
+    return res.redirect("./logout");
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
 module.exports = router;
