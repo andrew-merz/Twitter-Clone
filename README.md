@@ -6,11 +6,20 @@ Twitter-Clone is a back-end based project aimed at reverse-engineering the popul
 
 Screenshots:
 
+![Screen Shot 2022-05-02 at 8 09 38 PM](https://user-images.githubusercontent.com/100104797/166345302-1a0408ca-9bbc-40d2-9fe0-f686a95653ba.png)
+
+![Screen Shot 2022-05-02 at 8 10 55 PM](https://user-images.githubusercontent.com/100104797/166345343-db5c06a1-1cdd-4fd7-b476-39a7bad66b49.png)
+
+![Screen Shot 2022-05-02 at 8 11 28 PM](https://user-images.githubusercontent.com/100104797/166345375-ee63cb0c-9f66-49ff-adb4-e43cc49178e1.png)
+
+![Screen Shot 2022-05-02 at 8 12 02 PM](https://user-images.githubusercontent.com/100104797/166345416-608f0222-66df-438d-b54c-bb374a4a6456.png)
+
+
 Technologies Used: Mongoose | MongoDB | Express | Ejs | NodeJS | CSS
 
 Getting Started:
 
-Click on this link to launch the application:
+Click on this link to launch the application: https://twitter-clone-321.herokuapp.com/home
 
 1. You will be prompted to log in with your account
 
