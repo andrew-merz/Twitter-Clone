@@ -67,27 +67,6 @@ router.get("/:id/edit", async (req, res, next) => {
   }
 });
 
-router.delete("/:id/edit", async (req, res, next) => {
-  try {
-    const deleteUser = await db.User.findByIdAndRemove(req.params.id);
-    console.log(deleteUser);
-    return res.redirect("./logout");
-  } catch (error) {
-    console.log(error);
-    req.error = error;
-    return next();
-  }
-});
-
-// router.delete("/:id", (req, res) => {
-//   users.findByIdAndDelete(req.params.id, (error, deletedUser) => {
-//     if (error) return console.log(error);
-
-//     console.log(deletedUser);
-//     return res.redirect("./login");
-//   });
-// });
-
 router.post("/", async (req, res, next) => {
   try {
     const createdTweet = await db.Tweet.create(req.body);
@@ -122,6 +101,18 @@ router.post("/:id", async (req, res, next) => {
     console.log(newComment._id);
 
     res.redirect(`/home/${req.params.id}`);
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const deletedTweets = await db.Tweet.findbyIdAndDelete(req.params.id);
+    console.log(deletedTweets);
+    return res.redirect("./logout");
   } catch (error) {
     console.log(error);
     req.error = error;
