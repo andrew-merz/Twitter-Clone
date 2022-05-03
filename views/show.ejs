@@ -56,14 +56,26 @@
                 <input type="submit" value="Comment" class="commentButton" />
               </div>
             </form>
+            <form method="POST"action="/home/<%=oneTweet._id%>?_method=DELETE">
+              <input type="submit" value="delete tweet" />
+
+            </form>
             <h3 class="comment-title">Comments</h3>
             <% for (let i=0; i< comments.length; i++) { %>
               <div class="commentarea">
                 <p>
-                   @anonymous_user: <%= comments[i] %>
+                  <% if (comments[i] !=="") { %>
+                    <label for="content">
+                      <img class="profile-image" src="<%=commentpicture[i]%>" />
+                    </label>
+                    @<%=commentusername[i]%>: 
+                      <%= comments[i] %>
+               <%   } %>
+                  
                 </p>
               </div>
               <%}%>
+
           </div>
           </div>
       </section>
