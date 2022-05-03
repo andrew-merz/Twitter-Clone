@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const { findById } = require("../models/Tweet");
+//onst { findById } = require("../models/Tweet");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -38,12 +38,16 @@ router.get("/:id", async (req, res, next) => {
     const comments = tweet.comment;
     const commentusername = tweet.commentusername;
     const commentpicture = tweet.commentpicture;
+    //new try
+    //const commentArray = [tweet.comment,tweet.commentusername,tweet.commentpicture]
     const context = {
       oneTweet: tweet,
       currentUser,
       comments,
       commentpicture,
       commentusername,
+      //newtry
+      //commentArray
     };
     return res.render("show.ejs", context);
   } catch (error) {
@@ -82,8 +86,8 @@ router.post("/", async (req, res, next) => {
 router.post("/:id", async (req, res, next) => {
   try {
     const newCommentData = req.body;
-    const tweet = await db.Tweet.findById(req.params.id);
-    const newComment = await db.Comment.create(newCommentData);
+    //const tweet = await db.Tweet.findById(req.params.id);
+    //const newComment = await db.Comment.create(newCommentData);
     const currentUser = req.session.currentUser;
 
     await db.Tweet.findOneAndUpdate(
@@ -96,9 +100,9 @@ router.post("/:id", async (req, res, next) => {
     );
     await db.Tweet.findOneAndUpdate(
       { _id: req.params.id },
-      { $push: { comment: newComment.content } }
+      { $push: { comment: newCommentData.content } }
     );
-    console.log(newComment._id);
+    //console.log(newComment._id);
 
     res.redirect(`/home/${req.params.id}`);
   } catch (error) {
