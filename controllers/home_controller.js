@@ -67,6 +67,18 @@ router.get("/:id/edit", async (req, res, next) => {
   }
 });
 
+router.delete("/:id/edit", async (req, res, next) => {
+  try {
+    const deleteUser = await db.User.findByIdAndRemove(req.params.id);
+    console.log(deleteUser);
+    return res.redirect("./logout");
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
 router.post("/", async (req, res, next) => {
   try {
     const createdTweet = await db.Tweet.create(req.body);
