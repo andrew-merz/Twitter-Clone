@@ -15,7 +15,7 @@ Click on this link to launch the application:
 1. You will be prompted to log in with your account
 
    - If you dont have an account, click register to create an account with an email, username, and password
-   - your email will be safely stored in a databas and your password will be encrypted
+   - your email will be safely stored in a database and your password will be encrypted
 
 2. Once you are logged in you will see the main twitter feed with all of the other users tweets
 
@@ -25,7 +25,7 @@ Click on this link to launch the application:
 
    -Users can also add images to their tweets below the text box
 
-5. From the home page, Users can click directly on a tweet to display it and comment on it.
+5. From the home page, Users can click directly on a tweet to display it and comment on it anonymously
 
 6. To return to the home page, click the home button on the side-bar
 
