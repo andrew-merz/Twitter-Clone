@@ -88,11 +88,11 @@ router.post("/:id", async (req, res, next) => {
 
     await db.Tweet.findOneAndUpdate(
       { _id: req.params.id },
-      { $set: { commentusername: currentUser.username } }
+      { $push: { commentusername: currentUser.username } }
     );
     await db.Tweet.findOneAndUpdate(
       { _id: req.params.id },
-      { $set: { commentpicture: currentUser.profilePic } }
+      { $push: { commentpicture: currentUser.profilePic } }
     );
     await db.Tweet.findOneAndUpdate(
       { _id: req.params.id },
@@ -110,9 +110,9 @@ router.post("/:id", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    const deletedTweets = await db.Tweet.findbyIdAndDelete(req.params.id);
+    const deletedTweets = await db.Tweet.findByIdAndDelete(req.params.id);
     console.log(deletedTweets);
-    return res.redirect("./logout");
+    return res.redirect("/home");
   } catch (error) {
     console.log(error);
     req.error = error;
